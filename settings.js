@@ -138,8 +138,8 @@ module.exports = {
     // this setting.
     //
     https: {
-        key: fs.readFileSync('/home/pi/certificate/maxiv-controlbox-01_maxiv_lu_se.key'),
-        cert: fs.readFileSync('/home/pi/certificate/maxiv-controlbox-01_maxiv_lu_se_cert.cer')
+        key: fs.readFileSync('maxiv-controlbox-01_maxiv_lu_se.key'),
+        cert: fs.readFileSync('maxiv-controlbox-01_maxiv_lu_se.cer')
     },
 
     // The following property can be used to cause insecure HTTP connections to

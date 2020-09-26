@@ -991,8 +991,8 @@
         "y": 520,
         "wires": [
             [
-                "2132a017.ba23f",
-                "ee0ee61b.770a18"
+                "ee0ee61b.770a18",
+                "2132a017.ba23f"
             ],
             [
                 "439b1d51.6f5e64"
@@ -1931,7 +1931,7 @@
         "complete": "payload",
         "targetType": "msg",
         "x": 830,
-        "y": 1040,
+        "y": 1060,
         "wires": []
     },
     {
@@ -3975,5 +3975,128 @@
                 "55f8d4ad.ec006c"
             ]
         ]
+    },
+    {
+        "id": "7e07a0b0.11e4c",
+        "type": "http in",
+        "z": "90f83725.6dae08",
+        "name": "/setdevice",
+        "url": "/setdevice",
+        "method": "get",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 120,
+        "y": 1180,
+        "wires": [
+            [
+                "3a4d2725.aabf18"
+            ]
+        ]
+    },
+    {
+        "id": "f93bde77.dafef",
+        "type": "debug",
+        "z": "90f83725.6dae08",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "x": 930,
+        "y": 1220,
+        "wires": []
+    },
+    {
+        "id": "fdbdf4ad.1a6488",
+        "type": "http response",
+        "z": "90f83725.6dae08",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 930,
+        "y": 1160,
+        "wires": []
+    },
+    {
+        "id": "3a4d2725.aabf18",
+        "type": "function",
+        "z": "90f83725.6dae08",
+        "name": "Prep query",
+        "func": "if (!msg.payload.hasOwnProperty('deviceType'))\n{\n    msg.payload = 'deviceType not defined\\n';\n    return [null,msg];\n}\nif (!msg.payload.hasOwnProperty('name'))\n{\n    msg.payload = 'name not defined\\n';\n    return [null,msg];\n}\nif (!msg.payload.hasOwnProperty('attr'))\n{\n    msg.payload = 'attr not defined\\n';\n    return [null,msg];\n}\nif (!msg.payload.hasOwnProperty('value'))\n{\n    msg.payload = 'value not defined\\n';\n    return [null,msg];\n}\nif (!msg.payload.hasOwnProperty('password'))\n{\n    msg.payload = 'password not defined\\n';\n    return [null,msg];\n}\nif (msg.payload.password != global.get('settingsPassword'))\n{\n    msg.payload = 'wrong password\\n';\n    return [null,msg];\n}\nvar queryMsg = \n[\n    {\n        $and    :\n        [\n            {\n                deviceType  :   msg.payload.deviceType\n            },\n            {\n                name        :   msg.payload.name\n            }\n        ]\n    },\n    {\n        projection: \n        {\n            _id :   0\n        }\n    }\n];\nvar inputData = JSON.parse(JSON.stringify(msg.payload));\nmsg.payload = queryMsg;\nmsg['inputData'] = inputData;\nreturn [msg,null];",
+        "outputs": 2,
+        "noerr": 0,
+        "x": 290,
+        "y": 1180,
+        "wires": [
+            [
+                "39b56790.faafd8"
+            ],
+            [
+                "4d066955.3cda58"
+            ]
+        ]
+    },
+    {
+        "id": "39b56790.faafd8",
+        "type": "mongodb3 in",
+        "z": "90f83725.6dae08",
+        "service": "_ext_",
+        "configNode": "9cd5ff5e.caf86",
+        "name": "",
+        "collection": "devices",
+        "operation": "findOne",
+        "x": 510,
+        "y": 1180,
+        "wires": [
+            [
+                "c442b6c0.82a7f8"
+            ]
+        ]
+    },
+    {
+        "id": "c442b6c0.82a7f8",
+        "type": "function",
+        "z": "90f83725.6dae08",
+        "name": "Settings Check",
+        "func": "var device = null;\nif (isEmpty(msg.payload))\n{\n    msg.payload = 'device not found\\n';\n    return [msg,null];\n}\nelse\n{\n    device = JSON.parse(JSON.stringify(msg.payload));\n}\nif (!device.hasOwnProperty(msg.inputData.attr))\n{\n    msg.payload = 'attr not found\\n';\n    return [msg,null];\n}\nif (device[msg.inputData.attr].action != 'setting')\n{\n    msg.payload = 'Not a setting\\n';\n    return [msg,null];\n}\nvar settingValue = msg.inputData.value;\nif (device[msg.inputData.attr].type == 'scalar') settingValue = Number(settingValue);\ndevice[msg.inputData.attr].value = settingValue;\nmsg.payload = 'Success!\\n';\nvar topic = global.get('projectName') + '/' + device.deviceType + '/' + device.name + '/setting';\nreturn [msg,{topic:topic,payload:device}];\nfunction isEmpty(obj) \n{\n    for(var prop in obj) \n    {\n        if(obj.hasOwnProperty(prop))\n            return false;\n    }\n\n    return true;\n}\n",
+        "outputs": 2,
+        "noerr": 0,
+        "x": 730,
+        "y": 1180,
+        "wires": [
+            [
+                "fdbdf4ad.1a6488"
+            ],
+            [
+                "f93bde77.dafef",
+                "fe7c82bb.c7fb5"
+            ]
+        ]
+    },
+    {
+        "id": "4d066955.3cda58",
+        "type": "http response",
+        "z": "90f83725.6dae08",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 450,
+        "y": 1240,
+        "wires": []
+    },
+    {
+        "id": "fe7c82bb.c7fb5",
+        "type": "mqtt out",
+        "z": "90f83725.6dae08",
+        "name": "Publish Setting",
+        "topic": "",
+        "qos": "0",
+        "retain": "false",
+        "broker": "84d80994.260508",
+        "x": 960,
+        "y": 1280,
+        "wires": []
     }
 ]
