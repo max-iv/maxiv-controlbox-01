@@ -461,6 +461,13 @@
         "wholemsg": "false"
     },
     {
+        "id": "7efb4916.1a4cc8",
+        "type": "websocket-listener",
+        "z": "",
+        "path": "/rfill/websocket",
+        "wholemsg": "false"
+    },
+    {
         "id": "72c58cab.a3c494",
         "type": "function",
         "z": "e17f7487.2a78e8",
@@ -2382,7 +2389,8 @@
         "name": "osc-over device mqtt",
         "links": [
             "3013c7d6.60d5c8",
-            "6bfd49cd.905e58"
+            "6bfd49cd.905e58",
+            "807f098e.c2d9c8"
         ],
         "x": 895,
         "y": 120,
@@ -2630,7 +2638,7 @@
         "fieldType": "msg",
         "format": "html",
         "syntax": "mustache",
-        "template": "<!-- Body HTML -->\n    <div class='container' width=\"100%\">\n        <div class='row vert-pad' >\n            <div class='col-md-12' align='center' >\n                <a class=\"btn jumbotron-button btn-block big-text bold-text\" width='80%' href=\"/mode-0-damper?name=r3\" >\n                    <table width=\"100%\" alight=\"left\">\n                        <tr>\n                            <td width=\"30%\" align='center'> <img src=\"/img/balance.png\" height=\"70px\"/></td>\n                            <td width=\"70%\" align=\"left\">Mode 0 Damper</td>\n                        </tr>\n                    </table>\n                </a>\n            </div>\n        </div>\n        <div class='row vert-pad' >\n            <div class='col-md-12'>\n                <a class=\"btn jumbotron-button btn-block big-text bold-text\" width='80%' href=\"/oo-index\" >\n                    <table width=\"100%\" alight=\"left\">\n                        <tr>\n                            <td width=\"30%\" align='center'> <img src=\"/img/yellowSpaceShip.png\" height=\"70px\"/></td>\n                            <td width=\"70%\" align=\"left\">Oscillation Overthruster</td>\n                        </tr>\n                    </table>\n                </a>\n            </div>\n        </div>\n        <div class='row vert-pad' >\n            <div class='col-md-12' align='center' >\n                <a class=\"btn jumbotron-button btn-block big-text bold-text\" width='80%' href=\"/rfct?name=r3\" >\n                    <table width=\"100%\" alight=\"left\">\n                        <tr>\n                            <td width=\"30%\" align='center'> <img src=\"/img/yellowTransform.png\" height=\"70px\"/></td>\n                            <td width=\"70%\" align=\"left\">RFCT</td>\n                        </tr>\n                    </table>\n                </a>\n            </div>\n        </div>\n    </div>",
+        "template": "<!-- Body HTML -->\n    <div class='container' width=\"100%\">\n        <div class='row vert-pad' >\n            <div class='col-md-12' align='center' >\n                <a class=\"btn jumbotron-button btn-block big-text bold-text\" width='80%' href=\"/mode-0-damper?name=r3\" >\n                    <table width=\"100%\" alight=\"left\">\n                        <tr>\n                            <td width=\"30%\" align='center'> <img src=\"/img/balance.png\" height=\"70px\"/></td>\n                            <td width=\"70%\" align=\"left\">Mode 0 Damper</td>\n                        </tr>\n                    </table>\n                </a>\n            </div>\n        </div>\n        <div class='row vert-pad' >\n            <div class='col-md-12'>\n                <a class=\"btn jumbotron-button btn-block big-text bold-text\" width='80%' href=\"/oo-index\" >\n                    <table width=\"100%\" alight=\"left\">\n                        <tr>\n                            <td width=\"30%\" align='center'> <img src=\"/img/yellowSpaceShip.png\" height=\"70px\"/></td>\n                            <td width=\"70%\" align=\"left\">Oscillation Overthruster</td>\n                        </tr>\n                    </table>\n                </a>\n            </div>\n        </div>\n        <div class='row vert-pad' >\n            <div class='col-md-12' align='center' >\n                <a class=\"btn jumbotron-button btn-block big-text bold-text\" width='80%' href=\"/rfct?name=r3\" >\n                    <table width=\"100%\" alight=\"left\">\n                        <tr>\n                            <td width=\"30%\" align='center'> <img src=\"/img/yellowTransform.png\" height=\"70px\"/></td>\n                            <td width=\"70%\" align=\"left\">RFCT</td>\n                        </tr>\n                    </table>\n                </a>\n            </div>\n        </div>\n        <div class='row vert-pad' >\n            <div class='col-md-12' align='center' >\n                <a class=\"btn jumbotron-button btn-block big-text bold-text\" width='80%' href=\"/rfill?name=r3\" >\n                    <table width=\"100%\" alight=\"left\">\n                        <tr>\n                            <td width=\"30%\" align='center'> <img src=\"/img/bucketYellow.png\" height=\"70px\"/></td>\n                            <td width=\"70%\" align=\"left\">R3 Fill Pattern</td>\n                        </tr>\n                    </table>\n                </a>\n            </div>\n        </div>\n    </div>",
         "output": "str",
         "x": 770,
         "y": 40,
@@ -4098,5 +4106,150 @@
         "x": 960,
         "y": 1280,
         "wires": []
+    },
+    {
+        "id": "57734844.4203c8",
+        "type": "http in",
+        "z": "9c854ea3.68416",
+        "name": "/rfill",
+        "url": "/rfill",
+        "method": "get",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 90,
+        "y": 880,
+        "wires": [
+            [
+                "43d83811.56e618"
+            ]
+        ]
+    },
+    {
+        "id": "c8e1f59a.627968",
+        "type": "template",
+        "z": "9c854ea3.68416",
+        "name": "JavaScript",
+        "field": "payload.javascript",
+        "fieldType": "msg",
+        "format": "javascript",
+        "syntax": "mustache",
+        "template": "        var restfulDevice = \n        {\n            deviceType  : '{{{payload.script.deviceType}}}',\n            name        : '{{{payload.script.name}}}',\n            project     : '{{{payload.script.project}}}'\n        };\n        var mqttDevice = null;\n        var device = null;\n        var plotStart = new Date();\n\n        useWebSockets(true);\n        function onDocumentReady()\n        {\n        }\n        function onWebSocketOpen()\n        {\n            acknowledgeDialog('Alert', 'Wait!', 'Contacting the Mother Ship...');\n        }\n        function onWebSocketClose()\n        {\n            \n        }\n        function onWebSocketMessage(msg)\n        {\n            switch(msg.topic)\n            {\n                case 'readings':\n                    if (msg.mqttDevice.name == restfulDevice.name)\n                    {\n                        heartbeat();\n                        device = msg.payload;\n                        mqttDevice = msg.mqttDevice;\n                        updateDmaReadings();\n                    }\n                    break;\n                case 'getJwtToken':\n                    if (msg.userID == userID) loadJwtToken(msg);\n                    break;\n                case 'settingAcknowledge':\n                    if (msg.userID == userID)\n                    {\n                        if (msg.payload != 'Success!') acknowledgeDialog('Acknowledge', 'Setting', msg.payload);\n                    }\n                    break;\n                default:\n                // code block\n            }\n        }\n\n        function updateDmaReadings()\n        {\n            phasePlot();\n            modePlot();\n            bunchPlot();\n            dataGlobal();\n            $( \"#acknowledgeDialog\" ).dialog('close');\n        }\n        function dataGlobal()\n        {\n            $(\"#beamCurrent\").text(Math.round(device.beamCurrent.value * 100.0) / 100.0);\n        }\n        function phasePlot()\n        {\n            var layout =\n            {   \n                title: 'Phase',\n                showlegend: false,\n                xaxis: {title: 'Bunch Number'},\n                yaxis: {title: 'phase (pS)'},\n            };\n            var traceData = [{}];\n            var phase = device.phase.value;\n            traceData[0] = {x: [],y: [],name: 'phase', yaxis: 'y1',type: 'bar',marker: {color: '#575491'}};\n            for (var ii = 0; ii < phase[0].length; ++ii)\n            {\n                traceData[0].x[ii] = phase[0][ii];\n                traceData[0].y[ii] = phase[1][ii];\n            }\n            Plotly.newPlot('phasePlot', traceData, layout);\n        }\n        function modePlot()\n        {\n            var layout =\n            {   \n                title: 'Mode Spectrum',\n                xaxis: {title: 'Mode Number'},\n                yaxis: {title: 'Amplitude (pS)'},\n            };\n            var modeM = device.modeM.value;\n            var traceData = [{}];\n            traceData[0] = {x: [],y: [],name: 'mode', yaxis: 'y1',type: 'bar',marker: {color: '#575491'}};\n            for (var ii = 0; ii < modeM[0].length; ++ii)\n            {\n                traceData[0].x[ii] = modeM[0][ii];\n                traceData[0].y[ii] = modeM[1][ii];\n            }\n            Plotly.newPlot('modePlot', traceData, layout);\n        }\n        function bunchPlot()\n        {\n            var layout =\n            {   \n                title: 'Bunch Intensity',\n                showlegend: false,\n                xaxis: {title: 'Bunch Number'},\n                yaxis: {title: 'Bunch Current (mA)'},\n            };\n            var bunchCurrent = device.bunchCurrent.value;\n            var traceData = [{}];\n            traceData[0] = {x: [],y: [],name: 'bunch Intensity', yaxis: 'y1',type: 'bar',marker: {color: '#575491'}};\n            for (var ii = 0; ii < bunchCurrent[0].length; ++ii)\n            {\n                traceData[0].x[ii] = bunchCurrent[0][ii];\n                traceData[0].y[ii] = bunchCurrent[1][ii];\n            }\n            Plotly.newPlot('bunchPlot', traceData, layout);\n        }\n",
+        "output": "str",
+        "x": 730,
+        "y": 880,
+        "wires": [
+            [
+                "972d1211.e8935"
+            ]
+        ]
+    },
+    {
+        "id": "972d1211.e8935",
+        "type": "template",
+        "z": "9c854ea3.68416",
+        "name": "Body",
+        "field": "payload.body",
+        "fieldType": "msg",
+        "format": "html",
+        "syntax": "mustache",
+        "template": "    <div width='100%' style='padding-bottom: 25px;'>\n        <div class='card'>\n            <table width='100%'>\n                <tr>\n                    <td width='60%' align=\"left\">\n                        <span class=\"card-title\">Beam current (mA)</span>\n                    </td>\n                    <td width='40%' align=\"right\">\n                        <span class=\"card-title\" id=\"beamCurrent\"></span>\n                    </td>\n                </tr>\n            </table>\n        </div>\n    </div>\n    <div style='padding-bottom: 25px;'>\n        <div class='card'>\n            <p class='card-title'>Bunch Intensity</p>\n            <div class='card-body'>\n                <div id=\"bunchPlot\"></div>\n            </div>\n        </div>\n    </div>\n    <div style='padding-bottom: 25px;'>\n        <div class='card'>\n            <p class='card-title'>Mode Spectrum</p>\n            <div class='card-body'>\n                <div id=\"modePlot\"></div>\n            </div>\n        </div>\n    </div>\n    <div style='padding-bottom: 25px;'>\n        <div class='card'>\n            <p class='card-title'>Phase</p>\n            <div class='card-body'>\n                <div id=\"phasePlot\"></div>\n            </div>\n        </div>\n    </div>\n",
+        "output": "str",
+        "x": 870,
+        "y": 880,
+        "wires": [
+            [
+                "f3c21798.fb8ef8"
+            ]
+        ]
+    },
+    {
+        "id": "87e2f5b0.d498f8",
+        "type": "template",
+        "z": "9c854ea3.68416",
+        "name": "Title",
+        "field": "payload.title",
+        "fieldType": "msg",
+        "format": "html",
+        "syntax": "mustache",
+        "template": "R3 Fill Pattern\n",
+        "output": "str",
+        "x": 430,
+        "y": 880,
+        "wires": [
+            [
+                "b8575551.791e08"
+            ]
+        ]
+    },
+    {
+        "id": "b8575551.791e08",
+        "type": "template",
+        "z": "9c854ea3.68416",
+        "name": "navBarIcon",
+        "field": "payload.navBarIcon",
+        "fieldType": "msg",
+        "format": "html",
+        "syntax": "mustache",
+        "template": "bucketYellow.png",
+        "output": "str",
+        "x": 570,
+        "y": 880,
+        "wires": [
+            [
+                "c8e1f59a.627968"
+            ]
+        ]
+    },
+    {
+        "id": "f3c21798.fb8ef8",
+        "type": "subflow:8341090a.df9758",
+        "z": "9c854ea3.68416",
+        "name": "",
+        "x": 1140,
+        "y": 880,
+        "wires": []
+    },
+    {
+        "id": "43d83811.56e618",
+        "type": "function",
+        "z": "9c854ea3.68416",
+        "name": "Get Name",
+        "func": "var deviceType = 'osc-over';\nvar name = msg.payload.name;\nmsg.payload = {};\nmsg.payload['script'] = {};\nmsg.payload['script']['name'] = name;\nmsg.payload['script']['deviceType'] = deviceType;\nmsg.payload['script']['project'] = global.get('projectName');\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 250,
+        "y": 880,
+        "wires": [
+            [
+                "87e2f5b0.d498f8"
+            ]
+        ]
+    },
+    {
+        "id": "59b5ee6d.fe5d7",
+        "type": "websocket out",
+        "z": "8475ab9.3d26058",
+        "name": "/rfill/websocket",
+        "server": "7efb4916.1a4cc8",
+        "client": "",
+        "x": 1160,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "807f098e.c2d9c8",
+        "type": "link in",
+        "z": "8475ab9.3d26058",
+        "name": "r3fill in",
+        "links": [
+            "9d4bada0.71b3b"
+        ],
+        "x": 1035,
+        "y": 240,
+        "wires": [
+            [
+                "59b5ee6d.fe5d7"
+            ]
+        ]
     }
 ]
