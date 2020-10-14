@@ -35,6 +35,20 @@
         "info": ""
     },
     {
+        "id": "a95862c5.7cda3",
+        "type": "tab",
+        "label": "scalarDevice",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "f4668d01.5ec91",
+        "type": "tab",
+        "label": "blinky-lite-vectorDevice",
+        "disabled": false,
+        "info": ""
+    },
+    {
         "id": "ca529822.9112f8",
         "type": "subflow",
         "name": "HTML",
@@ -468,6 +482,53 @@
         "wholemsg": "false"
     },
     {
+        "id": "f1c490c3.d5141",
+        "type": "websocket-listener",
+        "z": "",
+        "path": "/scalarPlotter/websocket",
+        "wholemsg": "false"
+    },
+    {
+        "id": "7d0d644b.a6670c",
+        "type": "websocket-listener",
+        "z": "",
+        "path": "/scalarArchivePlotter/websocket",
+        "wholemsg": "false"
+    },
+    {
+        "id": "ebe834ce.572438",
+        "type": "websocket-listener",
+        "z": "",
+        "path": "/scalarViewer/websocket",
+        "wholemsg": "false"
+    },
+    {
+        "id": "9f081214.3b0ba",
+        "type": "websocket-listener",
+        "z": "",
+        "path": "/scalarAlarmScanner/websocket",
+        "wholemsg": "false"
+    },
+    {
+        "id": "aba473be.dd39f",
+        "type": "nexmobasic",
+        "z": ""
+    },
+    {
+        "id": "10ddafc3.5a804",
+        "type": "websocket-listener",
+        "z": "",
+        "path": "/vectorPlotter/websocket",
+        "wholemsg": "false"
+    },
+    {
+        "id": "974dfae8.5606f8",
+        "type": "websocket-listener",
+        "z": "",
+        "path": "/vectorArchivePlotter/websocket",
+        "wholemsg": "false"
+    },
+    {
         "id": "72c58cab.a3c494",
         "type": "function",
         "z": "e17f7487.2a78e8",
@@ -647,7 +708,7 @@
         "fieldType": "msg",
         "format": "css",
         "syntax": "mustache",
-        "template": "        :root \n        {\n          --color1: #434170;\n          --color2: #575491;\n          --color3: #9f9dc7;\n          --color4: #c6c2bb;\n          --color5: #fdc300;\n          --big-text-size :300%;\n          --bold-text :900;\n          --vert-pad : 25px;\n          --horz-pad : 25px;\n        }\n        body \n        {\n          background-color: white !important;\n          padding-left:25px;\n          padding-right:25px;\n        }\n        \n        img \n        {\n          object-fit: contain;\n        }\n        a\n        {\n            color: white;\n        }\n        a:visited \n        { \n            color: var(--white);\n        }\n        a:hover \n        { \n            color: var(--color5);\n        }\n\n        .jumbotron \n        {\n          background-color: var(--color2) !important;\n          color: white;\n          padding-top:25px;\n          padding-bottom:25px;\n        }\n        .jumbotron-title\n        {\n          color:var(--color5);\n        }\n        .jumbotron-button\n        {\n          color: white;\n          background-color: var(--color1);\n       }\n        .card\n        {\n          background-color: var(--color2) !important;\n          text-align: center;\n        }\n        .card-body\n        {\n          background-color: var(--color3);;\n        }\n        .card-button\n        {\n          color: var(--color5) !important;\n          background-color: var(--color1) !important;\n          font-weight: bold;\n        }\n        .card-title\n        {\n          color: var(--color5);\n          font-weight: var(--bold-text);\n          font-size: var(--big-text-size);\n         }\n        .card-text\n        {\n          color: white;\n          text-align: left;\n          font-size: var(--big-text-size);\n        }\n        .danger-card\n        {\n          background-color: yellow !important;\n          text-align: center;\n        }\n        .danger-card-body\n        {\n          background-color: yellow;\n        }\n        .danger-card-button\n        {\n          color: yellow !important;\n          background-color: red !important;\n          font-weight: bold;\n        }\n        .danger-card-title\n        {\n          color: red;\n          font-weight: var(--bold-text);\n          font-size: var(--big-text-size);\n         }\n        .danger-card-text\n        {\n          color: white;\n          text-align: left;\n          font-size: var(--big-text-size);\n        }\n        .tableHeading\n        {\n          color:var(--container-title-color);\n        }\n        .tableText\n        {\n          color:var(--container-text-color);\n          font-size: var(--big-text-size);\n        }\n       .vert-pad\n        {\n            padding-top:var(--vert-pad);;\n            padding-bottom:var(--vert-pad);;\n        }\n        .horz-pad\n        {\n            padding-left:var(--horz-pad);;\n            padding-right:var(--horz-pad);;\n        }\n        .big-text\n        {\n            font-size: var(--big-text-size);\n        }\n        .bold-text\n        {\n            font-weight: var(--bold-text);\n        }\n       .ui-dialog-titlebar-close \n        {\n            visibility: hidden;\n        }\n        input.inputLarger \n        { \n            transform: scale(3); \n            margin: 1px;\n        }\n",
+        "template": "        :root \n        {\n          --color1: #434170;\n          --color2: #575491;\n          --color3: #9f9dc7;\n          --color4: #c6c2bb;\n          --color5: #fdc300;\n          --big-text-size :300%;\n          --bold-text :900;\n          --vert-pad : 25px;\n          --horz-pad : 25px;\n        }\n        body \n        {\n          background-color: white !important;\n          padding-left:25px;\n          padding-right:25px;\n        }\n        \n        img \n        {\n          object-fit: contain;\n        }\n        a\n        {\n            color: white;\n        }\n        a:visited \n        { \n            color: var(--white);\n        }\n        a:hover \n        { \n            color: var(--color5);\n        }\n\n        .jumbotron \n        {\n          background-color: var(--color2) !important;\n          color: white;\n          padding-top:25px;\n          padding-bottom:25px;\n        }\n        .jumbotron-title\n        {\n          color:var(--color5);\n        }\n        .jumbotron-button\n        {\n          color: white;\n          background-color: var(--color1);\n       }\n        .card\n        {\n          background-color: var(--color2) ;\n          text-align: center;\n        }\n        .card-body\n        {\n          background-color: var(--color3);;\n        }\n        .card-button\n        {\n          color: var(--color5) !important;\n          background-color: var(--color1) !important;\n          font-weight: bold;\n        }\n        .card-title\n        {\n          color: var(--color5);\n          font-weight: var(--bold-text);\n          font-size: var(--big-text-size);\n         }\n        .card-text\n        {\n          color: white;\n          text-align: left;\n          font-size: var(--big-text-size);\n        }\n        .danger-card\n        {\n          background-color: yellow !important;\n          text-align: center;\n        }\n        .danger-card-body\n        {\n          background-color: yellow;\n        }\n        .danger-card-button\n        {\n          color: yellow !important;\n          background-color: red !important;\n          font-weight: bold;\n        }\n        .danger-card-title\n        {\n          color: red;\n          font-weight: var(--bold-text);\n          font-size: var(--big-text-size);\n         }\n        .danger-card-text\n        {\n          color: white;\n          text-align: left;\n          font-size: var(--big-text-size);\n        }\n        .tableHeading\n        {\n          color:var(--container-title-color);\n        }\n        .tableText\n        {\n          color:var(--container-text-color);\n          font-size: var(--big-text-size);\n        }\n       .vert-pad\n        {\n            padding-top:var(--vert-pad);;\n            padding-bottom:var(--vert-pad);;\n        }\n        .horz-pad\n        {\n            padding-left:var(--horz-pad);;\n            padding-right:var(--horz-pad);;\n        }\n        .big-text\n        {\n            font-size: var(--big-text-size);\n        }\n        .bold-text\n        {\n            font-weight: var(--bold-text);\n        }\n       .ui-dialog-titlebar-close \n        {\n            visibility: hidden;\n        }\n        input.inputLarger \n        { \n            transform: scale(3); \n            margin: 1px;\n        }\n",
         "output": "str",
         "x": 190,
         "y": 80,
@@ -2638,7 +2699,7 @@
         "fieldType": "msg",
         "format": "html",
         "syntax": "mustache",
-        "template": "<!-- Body HTML -->\n    <div class='container' width=\"100%\">\n        <div class='row vert-pad' >\n            <div class='col-md-12' align='center' >\n                <a class=\"btn jumbotron-button btn-block big-text bold-text\" width='80%' href=\"/mode-0-damper?name=r3\" >\n                    <table width=\"100%\" alight=\"left\">\n                        <tr>\n                            <td width=\"30%\" align='center'> <img src=\"/img/balance.png\" height=\"70px\"/></td>\n                            <td width=\"70%\" align=\"left\">Mode 0 Damper</td>\n                        </tr>\n                    </table>\n                </a>\n            </div>\n        </div>\n        <div class='row vert-pad' >\n            <div class='col-md-12'>\n                <a class=\"btn jumbotron-button btn-block big-text bold-text\" width='80%' href=\"/oo-index\" >\n                    <table width=\"100%\" alight=\"left\">\n                        <tr>\n                            <td width=\"30%\" align='center'> <img src=\"/img/yellowSpaceShip.png\" height=\"70px\"/></td>\n                            <td width=\"70%\" align=\"left\">Oscillation Overthruster</td>\n                        </tr>\n                    </table>\n                </a>\n            </div>\n        </div>\n        <div class='row vert-pad' >\n            <div class='col-md-12' align='center' >\n                <a class=\"btn jumbotron-button btn-block big-text bold-text\" width='80%' href=\"/rfct?name=r3\" >\n                    <table width=\"100%\" alight=\"left\">\n                        <tr>\n                            <td width=\"30%\" align='center'> <img src=\"/img/yellowTransform.png\" height=\"70px\"/></td>\n                            <td width=\"70%\" align=\"left\">RFCT</td>\n                        </tr>\n                    </table>\n                </a>\n            </div>\n        </div>\n        <div class='row vert-pad' >\n            <div class='col-md-12' align='center' >\n                <a class=\"btn jumbotron-button btn-block big-text bold-text\" width='80%' href=\"/rfill?name=r3\" >\n                    <table width=\"100%\" alight=\"left\">\n                        <tr>\n                            <td width=\"30%\" align='center'> <img src=\"/img/bucketYellow.png\" height=\"70px\"/></td>\n                            <td width=\"70%\" align=\"left\">R3 Fill Pattern</td>\n                        </tr>\n                    </table>\n                </a>\n            </div>\n        </div>\n    </div>",
+        "template": "<!-- Body HTML -->\n    <div class='container' width=\"100%\">\n        <div class='row vert-pad' >\n            <div class='col-md-12' align='center' >\n                <a class=\"btn jumbotron-button btn-block big-text bold-text\" width='80%' href=\"/mode-0-damper?name=r3\" >\n                    <table width=\"100%\" alight=\"left\">\n                        <tr>\n                            <td width=\"30%\" align='center'> <img src=\"/img/balance.png\" height=\"70px\"/></td>\n                            <td width=\"70%\" align=\"left\">Mode 0 Damper</td>\n                        </tr>\n                    </table>\n                </a>\n            </div>\n        </div>\n        <div class='row vert-pad' >\n            <div class='col-md-12'>\n                <a class=\"btn jumbotron-button btn-block big-text bold-text\" width='80%' href=\"/oo-index\" >\n                    <table width=\"100%\" alight=\"left\">\n                        <tr>\n                            <td width=\"30%\" align='center'> <img src=\"/img/yellowSpaceShip.png\" height=\"70px\"/></td>\n                            <td width=\"70%\" align=\"left\">Oscillation Overthruster</td>\n                        </tr>\n                    </table>\n                </a>\n            </div>\n        </div>\n        <div class='row vert-pad' >\n            <div class='col-md-12' align='center' >\n                <a class=\"btn jumbotron-button btn-block big-text bold-text\" width='80%' href=\"/rfct?name=r3\" >\n                    <table width=\"100%\" alight=\"left\">\n                        <tr>\n                            <td width=\"30%\" align='center'> <img src=\"/img/yellowTransform.png\" height=\"70px\"/></td>\n                            <td width=\"70%\" align=\"left\">RFCT</td>\n                        </tr>\n                    </table>\n                </a>\n            </div>\n        </div>\n        <div class='row vert-pad' >\n            <div class='col-md-12' align='center' >\n                <a class=\"btn jumbotron-button btn-block big-text bold-text\" width='80%' href=\"/rfill?name=r3\" >\n                    <table width=\"100%\" alight=\"left\">\n                        <tr>\n                            <td width=\"30%\" align='center'> <img src=\"/img/bucketYellow.png\" height=\"70px\"/></td>\n                            <td width=\"70%\" align=\"left\">R3 Fill Pattern</td>\n                        </tr>\n                    </table>\n                </a>\n            </div>\n        </div>\n        <div class='row vert-pad' >\n            <div class='col-md-12' align='center' >\n                <a class=\"btn jumbotron-button btn-block big-text bold-text\" width='80%' href=\"/core\" >\n                    <table width=\"100%\" alight=\"left\">\n                        <tr>\n                            <td width=\"30%\" align='center'> <img src=\"/img/coreYellow.png\" height=\"70px\"/></td>\n                            <td width=\"70%\" align=\"left\">Core Apps</td>\n                        </tr>\n                    </table>\n                </a> \n            </div>\n        </div>\n    </div>",
         "output": "str",
         "x": 770,
         "y": 40,
@@ -2657,7 +2718,7 @@
         "fieldType": "msg",
         "format": "html",
         "syntax": "mustache",
-        "template": "Mode 0 Apps",
+        "template": "Control Box Apps",
         "output": "str",
         "x": 490,
         "y": 40,
@@ -4133,7 +4194,7 @@
         "fieldType": "msg",
         "format": "javascript",
         "syntax": "mustache",
-        "template": "        var restfulDevice = \n        {\n            deviceType  : '{{{payload.script.deviceType}}}',\n            name        : '{{{payload.script.name}}}',\n            project     : '{{{payload.script.project}}}'\n        };\n        var mqttDevice = null;\n        var device = null;\n        var plotStart = new Date();\n\n        useWebSockets(true);\n        function onDocumentReady()\n        {\n        }\n        function onWebSocketOpen()\n        {\n            acknowledgeDialog('Alert', 'Wait!', 'Contacting the Mother Ship...');\n        }\n        function onWebSocketClose()\n        {\n            \n        }\n        function onWebSocketMessage(msg)\n        {\n            switch(msg.topic)\n            {\n                case 'readings':\n                    if (msg.mqttDevice.name == restfulDevice.name)\n                    {\n                        heartbeat();\n                        device = msg.payload;\n                        mqttDevice = msg.mqttDevice;\n                        updateDmaReadings();\n                    }\n                    break;\n                case 'getJwtToken':\n                    if (msg.userID == userID) loadJwtToken(msg);\n                    break;\n                case 'settingAcknowledge':\n                    if (msg.userID == userID)\n                    {\n                        if (msg.payload != 'Success!') acknowledgeDialog('Acknowledge', 'Setting', msg.payload);\n                    }\n                    break;\n                default:\n                // code block\n            }\n        }\n\n        function updateDmaReadings()\n        {\n            phasePlot();\n            modePlot();\n            bunchPlot();\n            dataGlobal();\n            $( \"#acknowledgeDialog\" ).dialog('close');\n        }\n        function dataGlobal()\n        {\n            $(\"#beamCurrent\").text(Math.round(device.beamCurrent.value * 100.0) / 100.0);\n        }\n        function phasePlot()\n        {\n            var layout =\n            {   \n                title: 'Phase',\n                showlegend: false,\n                xaxis: {title: 'Bunch Number'},\n                yaxis: {title: 'phase (pS)'},\n            };\n            var traceData = [{}];\n            var phase = device.phase.value;\n            traceData[0] = {x: [],y: [],name: 'phase', yaxis: 'y1',type: 'bar',marker: {color: '#575491'}};\n            for (var ii = 0; ii < phase[0].length; ++ii)\n            {\n                traceData[0].x[ii] = phase[0][ii];\n                traceData[0].y[ii] = phase[1][ii];\n            }\n            Plotly.newPlot('phasePlot', traceData, layout);\n        }\n        function modePlot()\n        {\n            var layout =\n            {   \n                title: 'Mode Spectrum',\n                xaxis: {title: 'Mode Number'},\n                yaxis: {title: 'Amplitude (pS)'},\n            };\n            var modeM = device.modeM.value;\n            var traceData = [{}];\n            traceData[0] = {x: [],y: [],name: 'mode', yaxis: 'y1',type: 'bar',marker: {color: '#575491'}};\n            for (var ii = 0; ii < modeM[0].length; ++ii)\n            {\n                traceData[0].x[ii] = modeM[0][ii];\n                traceData[0].y[ii] = modeM[1][ii];\n            }\n            Plotly.newPlot('modePlot', traceData, layout);\n        }\n        function bunchPlot()\n        {\n            var layout =\n            {   \n                title: 'Bunch Intensity',\n                showlegend: false,\n                xaxis: {title: 'Bunch Number'},\n                yaxis: {title: 'Bunch Current (mA)'},\n            };\n            var bunchCurrent = device.bunchCurrent.value;\n            var traceData = [{}];\n            traceData[0] = {x: [],y: [],name: 'bunch Intensity', yaxis: 'y1',type: 'bar',marker: {color: '#575491'}};\n            for (var ii = 0; ii < bunchCurrent[0].length; ++ii)\n            {\n                traceData[0].x[ii] = bunchCurrent[0][ii];\n                traceData[0].y[ii] = bunchCurrent[1][ii];\n            }\n            Plotly.newPlot('bunchPlot', traceData, layout);\n        }\n",
+        "template": "        var restfulDevice = \n        {\n            deviceType  : '{{{payload.script.deviceType}}}',\n            name        : '{{{payload.script.name}}}',\n            project     : '{{{payload.script.project}}}'\n        };\n        var mqttDevice = null;\n        var device = null;\n        var plotStart = new Date();\n\n        useWebSockets(true);\n        function onDocumentReady()\n        {\n        }\n        function onWebSocketOpen()\n        {\n            acknowledgeDialog('Alert', 'Wait!', 'Contacting the Mother Ship...');\n        }\n        function onWebSocketClose()\n        {\n            \n        }\n        function onWebSocketMessage(msg)\n        {\n            switch(msg.topic)\n            {\n                case 'readings':\n                    if (msg.mqttDevice.name == restfulDevice.name)\n                    {\n                        heartbeat();\n                        device = msg.payload;\n                        mqttDevice = msg.mqttDevice;\n                        updateDmaReadings();\n                    }\n                    break;\n                case 'getJwtToken':\n                    if (msg.userID == userID) loadJwtToken(msg);\n                    break;\n                case 'settingAcknowledge':\n                    if (msg.userID == userID)\n                    {\n                        if (msg.payload != 'Success!') acknowledgeDialog('Acknowledge', 'Setting', msg.payload);\n                    }\n                    break;\n                default:\n                // code block\n            }\n        }\n\n        function updateDmaReadings()\n        {\n            phasePlot();\n            modePlot();\n            bunchPlot();\n            dataGlobal();\n            $( \"#acknowledgeDialog\" ).dialog('close');\n        }\n        function dataGlobal()\n        {\n            $(\"#beamCurrent\").text(Math.round(device.beamCurrent.value * 100.0) / 100.0);\n        }\n        function phasePlot()\n        {\n            var normalCardStyle = '#575491';\n            var normalCardTitleStyle = '#fdc300';\n            var normalCardBodyStyle = '#9f9dc7';\n            var normalTraceColor = '#575491';\n            var alarmCardStyle = 'red';\n            var alarmCardTitleStyle = 'white';\n            var alarmCardBodyStyle = 'pink';\n            var alarmTraceColor = 'red';\n            \n            var cardStyle = normalCardStyle;\n            var cardTitleStyle = normalCardTitleStyle;\n            var cardBodyStyle = normalCardBodyStyle;\n            var traceColor = normalTraceColor;\n            if (device.beamCurrent.value > 50.0)\n            {\n                if (device.maxDipoleModeAmp.value > device.maxDipoleModeAmp.alarm.limits.high)\n                {\n                    cardStyle = alarmCardStyle;\n                    cardTitleStyle = alarmCardTitleStyle;\n                    cardBodyStyle = alarmCardBodyStyle;\n                    traceColor = alarmTraceColor;\n                }\n            }\n            $('#phaseCard').css('background-color',cardStyle);\n            $('#phaseCardBody').css('background-color',cardBodyStyle);\n            $('#phaseCardTitle').css('color',cardTitleStyle);\n            var ymax = device.maxDipoleModeAmp.alarm.limits.hihi;\n            var layout =\n            {   \n                title: 'Phase',\n                showlegend: false,\n                xaxis: {title: 'Bunch Number'},\n                yaxis: {title: 'phase (pS)', range: [-ymax,ymax]}\n            };\n            var traceData = [{}];\n            var phase = device.difPhase.value;\n            traceData[0] = {x: [],y: [],name: 'phase', yaxis: 'y1',type: 'bar',marker: {color: traceColor}};\n            for (var ii = 0; ii < phase[0].length; ++ii)\n            {\n                traceData[0].x[ii] = phase[0][ii];\n                traceData[0].y[ii] = phase[1][ii];\n            }\n            Plotly.newPlot('phasePlot', traceData, layout);\n        }\n        function modePlot()\n        {\n            var normalCardStyle = '#575491';\n            var normalCardTitleStyle = '#fdc300';\n            var normalCardBodyStyle = '#9f9dc7';\n            var normalTraceColor = '#575491';\n            var alarmCardStyle = 'red';\n            var alarmCardTitleStyle = 'white';\n            var alarmCardBodyStyle = 'pink';\n            var alarmTraceColor = 'red';\n            \n            var cardStyle = normalCardStyle;\n            var cardTitleStyle = normalCardTitleStyle;\n            var cardBodyStyle = normalCardBodyStyle;\n            var traceColor = normalTraceColor;\n            if (device.beamCurrent.value > 50.0)\n            {\n                if (device.maxDipoleModeAmp.value > device.maxDipoleModeAmp.alarm.limits.high)\n                {\n                    cardStyle = alarmCardStyle;\n                    cardTitleStyle = alarmCardTitleStyle;\n                    cardBodyStyle = alarmCardBodyStyle;\n                    traceColor = alarmTraceColor;\n                }\n            }\n            $('#modeSpectrumCard').css('background-color',cardStyle);\n            $('#modeSpectrumCardBody').css('background-color',cardBodyStyle);\n            $('#modeSpectrumCardTitle').css('color',cardTitleStyle);\n            var ymax = device.maxDipoleModeAmp.alarm.limits.high;\n            var yscale = Math.floor(Math.log10(ymax)) + 1;\n            var layout =\n            {   \n                title: 'Mode Spectrum',\n                xaxis: {title: 'Mode Number'},\n                yaxis: {title: 'Amplitude (pS)', type: 'log', range: [0,yscale]},\n                shapes: [{\n                            type: 'rect',\n                            xref: 'paper',\n                            x0: 0,\n                            x1: 1,\n                            yref: 'y',\n                            y0: ymax,\n                            y1: ymax + 1,\n                            line: { width: 0},\n                            fillcolor: 'red'\n                        }]\n            };\n            var modeM = device.modeM.value;\n            var traceData = [{}];\n            traceData[0] = {x: [],y: [],name: 'mode', yaxis: 'y1',type: 'bar',marker: {color: traceColor}};\n            for (var ii = 0; ii < modeM[0].length; ++ii)\n            {\n                traceData[0].x[ii] = modeM[0][ii];\n                traceData[0].y[ii] = modeM[1][ii];\n            }\n            Plotly.newPlot('modePlot', traceData, layout);\n        }\n        function bunchPlot()\n        {\n            var layout =\n            {   \n                title: 'Bunch Intensity',\n                showlegend: false,\n                xaxis: {title: 'Bunch Number'},\n                yaxis: {title: 'Bunch Current (mA)'},\n            };\n            var bunchCurrent = device.bunchCurrent.value;\n            var traceData = [{}];\n            traceData[0] = {x: [],y: [],name: 'bunch Intensity', yaxis: 'y1',type: 'bar',marker: {color: '#575491'}};\n            for (var ii = 0; ii < bunchCurrent[0].length; ++ii)\n            {\n                traceData[0].x[ii] = bunchCurrent[0][ii];\n                traceData[0].y[ii] = bunchCurrent[1][ii];\n            }\n            Plotly.newPlot('bunchPlot', traceData, layout);\n        }\n",
         "output": "str",
         "x": 730,
         "y": 880,
@@ -4152,7 +4213,7 @@
         "fieldType": "msg",
         "format": "html",
         "syntax": "mustache",
-        "template": "    <div width='100%' style='padding-bottom: 25px;'>\n        <div class='card'>\n            <table width='100%'>\n                <tr>\n                    <td width='60%' align=\"left\">\n                        <span class=\"card-title\">Beam current (mA)</span>\n                    </td>\n                    <td width='40%' align=\"right\">\n                        <span class=\"card-title\" id=\"beamCurrent\"></span>\n                    </td>\n                </tr>\n            </table>\n        </div>\n    </div>\n    <div style='padding-bottom: 25px;'>\n        <div class='card'>\n            <p class='card-title'>Bunch Intensity</p>\n            <div class='card-body'>\n                <div id=\"bunchPlot\"></div>\n            </div>\n        </div>\n    </div>\n    <div style='padding-bottom: 25px;'>\n        <div class='card'>\n            <p class='card-title'>Mode Spectrum</p>\n            <div class='card-body'>\n                <div id=\"modePlot\"></div>\n            </div>\n        </div>\n    </div>\n    <div style='padding-bottom: 25px;'>\n        <div class='card'>\n            <p class='card-title'>Phase</p>\n            <div class='card-body'>\n                <div id=\"phasePlot\"></div>\n            </div>\n        </div>\n    </div>\n",
+        "template": "    <div width='100%' style='padding-bottom: 25px;'>\n        <div class='card'>\n            <table width='100%'>\n                <tr>\n                    <td width='60%' align=\"left\">\n                        <span class=\"card-title\">Beam current (mA)</span>\n                    </td>\n                    <td width='40%' align=\"right\">\n                        <span class=\"card-title\" id=\"beamCurrent\"></span>\n                    </td>\n                </tr>\n            </table>\n        </div>\n    </div>\n    <div style='padding-bottom: 25px;'>\n        <div class='card'  id='modeSpectrumCard'>\n            <p class=\"card-title\"  id='modeSpectrumCardTitle'>Mode Spectrum</p>\n            <div class='card-body' id='modeSpectrumCardBody'>\n                <div id=\"modePlot\"></div>\n            </div>\n        </div>\n    </div>\n    <div style='padding-bottom: 25px;'>\n        <div class='card' id='phaseCard'>\n            <p class='card-title' id='phaseCardTitle'>Phase</p>\n            <div class='card-body' id='phaseCardBody'>\n                <div id=\"phasePlot\"></div>\n            </div>\n        </div>\n    </div>\n    <div style='padding-bottom: 25px;'>\n        <div class='card'>\n            <p class='card-title'>Bunch Intensity</p>\n            <div class='card-body'>\n                <div id=\"bunchPlot\"></div>\n            </div>\n        </div>\n    </div>\n",
         "output": "str",
         "x": 870,
         "y": 880,
@@ -4251,5 +4312,1743 @@
                 "59b5ee6d.fe5d7"
             ]
         ]
+    },
+    {
+        "id": "fdab6390.aa42c",
+        "type": "http in",
+        "z": "a95862c5.7cda3",
+        "name": "/scalarPlotter",
+        "url": "/scalarPlotter",
+        "method": "get",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 90,
+        "y": 40,
+        "wires": [
+            [
+                "9425396c.bb9898"
+            ]
+        ]
+    },
+    {
+        "id": "6e1f6194.ca4a4",
+        "type": "websocket in",
+        "z": "a95862c5.7cda3",
+        "name": "ScalarPlotter",
+        "server": "f1c490c3.d5141",
+        "client": "",
+        "x": 110,
+        "y": 320,
+        "wires": [
+            [
+                "71edc863.1acbd8"
+            ]
+        ]
+    },
+    {
+        "id": "2eb4d57a.d2889a",
+        "type": "websocket out",
+        "z": "a95862c5.7cda3",
+        "name": "ScalarPlotter",
+        "server": "f1c490c3.d5141",
+        "client": "",
+        "x": 1630,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "71edc863.1acbd8",
+        "type": "json",
+        "z": "a95862c5.7cda3",
+        "name": "",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 310,
+        "y": 380,
+        "wires": [
+            [
+                "b64563d2.825d9"
+            ]
+        ]
+    },
+    {
+        "id": "b64563d2.825d9",
+        "type": "switch",
+        "z": "a95862c5.7cda3",
+        "name": "",
+        "property": "payload.topic",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "getDeviceList",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "getNameList",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "getAttrList",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "getDeviceValues",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "getArchiveValues",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "sendSettingToMqtt",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "getJwtToken",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 7,
+        "x": 430,
+        "y": 380,
+        "wires": [
+            [
+                "2245fbcc.b82104"
+            ],
+            [
+                "249f68ba.31af08"
+            ],
+            [
+                "273a23a1.46d2cc"
+            ],
+            [
+                "632d64e1.46100c"
+            ],
+            [
+                "a6b301be.c5a54"
+            ],
+            [
+                "4e740245.682f0c"
+            ],
+            [
+                "e195d6c7.620748"
+            ]
+        ]
+    },
+    {
+        "id": "2245fbcc.b82104",
+        "type": "function",
+        "z": "a95862c5.7cda3",
+        "name": "getDeviceList",
+        "func": "var newMsg = \n{\n    topic           : 'getDeviceList',\n    userID          : msg.payload.userID,\n    payload         : [{},{projection:{deviceType:1, _id:0}}]\n};\nreturn newMsg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 620,
+        "y": 300,
+        "wires": [
+            [
+                "27184b0f.921d04"
+            ]
+        ]
+    },
+    {
+        "id": "7f004bd6.823334",
+        "type": "template",
+        "z": "a95862c5.7cda3",
+        "name": "Body",
+        "field": "payload.body",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "    <div width=\"100%\">\n        <table width=\"100%\">\n            <tr>\n                <td width=\"2%\" align=\"center\"><span class=\"tableHeading \">Tr</span></td>\n                <td width=\"19%\" align=\"center\"><span class=\"tableHeading \">Device</span></td>\n                <td width=\"19%\" align=\"center\"><span class=\"tableHeading \">Name</span></td>\n                <td width=\"19%\" align=\"center\"><span class=\"tableHeading \">Prop</span></td>\n                <td width=\"19%\" align=\"center\"><span class=\"tableHeading \">Attr</span></td>\n                <td width=\"8%\" align=\"center\"><span class=\"tableHeading \">value</span></td>\n                <td width=\"7%\" align=\"center\"><span class=\"tableHeading \">unit</span></td>\n                <td width=\"2%\" align=\"center\"><span class=\"tableHeading \">y1</span></td>\n                <td width=\"2%\" align=\"center\"><span class=\"tableHeading \">y2</span></td>\n                <td width=\"2%\" align=\"center\"><span class=\"tableHeading \">pt</span></td>\n            </tr>\n            <tr>\n                <td align=\"center\"><span class=\"tableText\">1</span></td>\n                <td>\n                    <select class=\"custom-select \" id=\"deviceSelect0\" onchange=\"deviceSelected(0)\">\n                        <option value='notSelected'></option>\n                    </select>\n                </td>\n                <td>\n                    <select class=\"custom-select \" id=\"nameSelect0\" onchange=\"nameSelected(0)\">\n                        <option value='notSelected'></option>\n                    </select>\n                </td>\n                <td>\n                    <select class=\"custom-select \" id=\"propSelect0\" onchange=\"propSelected(0)\">\n                        <option value='notSelected'></option>\n                    </select>\n                </td>\n                <td>\n                    <select class=\"custom-select \" id=\"attrSelect0\" onchange=\"attrSelected(0)\">\n                        <option value='notSelected'></option>\n                    </select>\n                </td>\n                <td align=\"center\"><span class=\"tableText \" id=\"valueSelect0\"></span></td>\n                <td align=\"center\"><span class=\"tableText \" id=\"unitSelect0\"></span></td>\n                <form action=\"\" >\n                   <td align=\"center\"><input id=\"plotAxis_0y1\" type=\"radio\" name=\"plotAxis_0\"  value=\"y1\"  onchange='selectAxis(0,\"y1\")' checked></td>\n                   <td align=\"center\"><input id=\"plotAxis_0y2\" type=\"radio\" name=\"plotAxis_0\"  value=\"y2\"  onchange='selectAxis(0,\"y2\")' ></td>\n                </form>\n                <td align=\"center\"><input id=\"pts_0\" type=\"checkbox\" name=\"pts_0\"  value=\"pts\"  onchange='selectPts(0)'></td>\n            </tr>\n            <tr>\n                <td align=\"center\"><span class=\"tableText\">2</span></td>\n                <td>\n                    <select class=\"custom-select\" id=\"deviceSelect1\" onchange=\"deviceSelected(1)\">\n                        <option value='notSelected'></option>\n                    </select>\n                </td>\n                <td>\n                    <select class=\"custom-select \" id=\"nameSelect1\" onchange=\"nameSelected(1)\">\n                        <option value='notSelected'></option>\n                    </select>\n                </td>\n                <td>\n                    <select class=\"custom-select\" id=\"propSelect1\" onchange=\"propSelected(1)\">\n                        <option value='notSelected'></option>\n                    </select>\n                </td>\n                <td>\n                    <select class=\"custom-select\" id=\"attrSelect1\" onchange=\"attrSelected(1)\">\n                        <option value='notSelected'></option>\n                    </select>\n                </td>\n                <td align=\"center\"><span class=\"tableText\" id=\"valueSelect1\"></span></td>\n                <td align=\"center\"><span class=\"tableText\" id=\"unitSelect1\"></span></td>\n                <form action=\"\" >\n                   <td align=\"center\"><input id=\"plotAxis_1y1\" type=\"radio\" name=\"plotAxis_1\"  value=\"y1\"  onchange='selectAxis(1,\"y1\")' checked></td>\n                   <td align=\"center\"><input id=\"plotAxis_1y2\" type=\"radio\" name=\"plotAxis_1\"  value=\"y2\"  onchange='selectAxis(1,\"y2\")' ></td>\n                </form>\n                <td align=\"center\"><input id=\"pts_1\" type=\"checkbox\" name=\"pts_1\"  value=\"pts\"  onchange='selectPts(1)'></td>\n            </tr>\n            <tr>\n                <td align=\"center\"><span class=\"tableText\">3</span></td>\n                <td>\n                    <select class=\"custom-select\" id=\"deviceSelect2\" onchange=\"deviceSelected(2)\">\n                        <option value='notSelected'></option>\n                    </select>\n                </td>\n                <td>\n                    <select class=\"custom-select \" id=\"nameSelect2\" onchange=\"nameSelected(2)\">\n                        <option value='notSelected'></option>\n                    </select>\n                </td>\n                <td>\n                    <select class=\"custom-select\" id=\"propSelect2\" onchange=\"propSelected(2)\">\n                        <option value='notSelected'></option>\n                    </select>\n                </td>\n                <td>\n                    <select class=\"custom-select\" id=\"attrSelect2\" onchange=\"attrSelected(2)\">\n                        <option value='notSelected'></option>\n                    </select>\n                </td>\n                <td align=\"center\"><span class=\"tableText\" id=\"valueSelect2\"></span></td>\n                <td align=\"center\"><span class=\"tableText\" id=\"unitSelect2\"></span></td>\n                <form action=\"\" >\n                   <td align=\"center\"><input id=\"plotAxis_2y1\" type=\"radio\" name=\"plotAxis_2\"  value=\"y1\"  onchange='selectAxis(2,\"y1\")' checked></td>\n                   <td align=\"center\"><input id=\"plotAxis_2y2\" type=\"radio\" name=\"plotAxis_2\"  value=\"y2\"  onchange='selectAxis(2,\"y2\")' ></td>\n                </form>\n                <td align=\"center\"><input id=\"pts_2\" type=\"checkbox\" name=\"pts_2\"  value=\"pts\"  onchange='selectPts(2)'></td>\n            </tr>\n            <tr>\n                <td align=\"center\"><span class=\"tableText\">4</span></td>\n                <td>\n                    <select class=\"custom-select\" id=\"deviceSelect3\" onchange=\"deviceSelected(3)\">\n                        <option value='notSelected'></option>\n                    </select>\n                </td>\n                <td>\n                    <select class=\"custom-select \" id=\"nameSelect3\" onchange=\"nameSelected(3)\">\n                        <option value='notSelected'></option>\n                    </select>\n                </td>\n                <td>\n                    <select class=\"custom-select\" id=\"propSelect3\" onchange=\"propSelected(3)\">\n                        <option value='notSelected'></option>\n                    </select>\n                </td>\n                <td>\n                    <select class=\"custom-select\" id=\"attrSelect3\" onchange=\"attrSelected(3)\">\n                        <option value='notSelected'></option>\n                    </select>\n                </td>\n                <td align=\"center\"><span class=\"tableText\" id=\"valueSelect3\"></span></td>\n                <td align=\"center\"><span class=\"tableText\" id=\"unitSelect3\"></span></td>\n                <form action=\"\" >\n                   <td align=\"center\"><input id=\"plotAxis_3y1\" type=\"radio\" name=\"plotAxis_3\"  value=\"y1\"  onchange='selectAxis(3,\"y1\")' checked></td>\n                   <td align=\"center\"><input id=\"plotAxis_3y2\" type=\"radio\" name=\"plotAxis_3\"  value=\"y2\"  onchange='selectAxis(3,\"y2\")' ></td>\n                </form>\n                <td align=\"center\"><input id=\"pts_3\" type=\"checkbox\" name=\"pts_3\"  value=\"pts\"  onchange='selectPts(3)'></td>\n            </tr>\n        </table>\n    </div>\n    <div>\n        <div class='row'>\n            <div class='col-md-6'>\n                <table>\n                    <tr>\n                        <td width=50%  align=\"center\"class=\"tableHeading\">Span</td>\n                        <td width=50% align=\"center\"></td>\n                    </tr>\n                    <tr>\n                         <td align=\"center\">\n                            <input class=\"form-control\" id=\"plotLength\" type=\"text\" value=\"300\"/>\n                        </td>\n                        <td align=\"center\">\n                            <button class=\"btn jumbotron-button\" id=\"startPlotButton\" type=\"button\" onclick=\"startPlot()\">Start Plot</button>\n                        </td>\n                    </tr>\n                </table>\n            </div>\n        </div>\n        <div class='row'>\n            <div class='col-md-12'>\n                <div class='card'>\n                    <p class='card-title'>Time Plot</p>\n                    <div class='card-body' align=\"center\">\n                        <div id=\"timePlot\" width=\"100%\" class=\"plot\"></div> \n                    </div>\n                </div>\n            </div>\n        </div>\n     </div>",
+        "output": "str",
+        "x": 910,
+        "y": 40,
+        "wires": [
+            [
+                "bfb7c068.01b0d"
+            ]
+        ]
+    },
+    {
+        "id": "880d15ab.0908f8",
+        "type": "function",
+        "z": "a95862c5.7cda3",
+        "name": "parse device list",
+        "func": "function objectLength( object ) {\n    var length = 0;\n    for( var key in object ) {\n        if( object.hasOwnProperty(key) ) {\n            ++length;\n        }\n    }\n    return length;\n}\nvar numDevices = objectLength(msg.payload);\nvar deviceList = [];\ndeviceList[0] = msg.payload[0].deviceType;\nif (numDevices > 1)\n{\n    for (var idevice = 1; idevice < numDevices; ++idevice)\n    {\n        var deviceAlreadyFound = false;\n        for (ii = 0; ii < idevice; ++ii)\n        {\n            if (msg.payload[idevice].deviceType == deviceList[ii]) deviceAlreadyFound = true;\n        }\n        if (!deviceAlreadyFound) deviceList[idevice] = msg.payload[idevice].deviceType;\n    }\n}\n\nreturn {\n    topic:'getDeviceList',\n    payload:{\n        topic           : 'getDeviceList',\n        payload         : deviceList,\n        userID          : msg.userID,\n    }\n};\n",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 1240,
+        "y": 300,
+        "wires": [
+            [
+                "b3c6d83.10eff28"
+            ]
+        ]
+    },
+    {
+        "id": "273a23a1.46d2cc",
+        "type": "function",
+        "z": "a95862c5.7cda3",
+        "name": "getAttrList",
+        "func": "var projectionFilter =  {projection:{id:0}};\nvar newMsg = \n{\n    topic           : 'getAttrList',\n    userID          : msg.payload.userID,\n    payload         : [{$and : [{deviceType:msg.payload.deviceType}, {name:msg.payload.name}]}, projectionFilter],\n    prop            : msg.payload.prop,\n    name            : msg.payload.name,\n    deviceType      : msg.payload.deviceType,\n    trace           : msg.payload.trace\n};\nreturn newMsg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 600,
+        "y": 380,
+        "wires": [
+            [
+                "27184b0f.921d04"
+            ]
+        ]
+    },
+    {
+        "id": "f04f8ebf.018eb",
+        "type": "switch",
+        "z": "a95862c5.7cda3",
+        "name": "",
+        "property": "topic",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "getDeviceList",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "getNameList",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "getAttrList",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "getDeviceValues",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 4,
+        "x": 1090,
+        "y": 380,
+        "wires": [
+            [
+                "880d15ab.0908f8"
+            ],
+            [
+                "71ceb893.dd0f08"
+            ],
+            [
+                "d24d780a.9f2fa8"
+            ],
+            [
+                "7cf31e72.0f341"
+            ]
+        ]
+    },
+    {
+        "id": "d24d780a.9f2fa8",
+        "type": "function",
+        "z": "a95862c5.7cda3",
+        "name": "parse attrList",
+        "func": "function objectLength( object ) {\n    var length = 0;\n    for( var key in object ) {\n        if( object.hasOwnProperty(key) ) {\n            ++length;\n        }\n    }\n    return length;\n}\nvar numDevices = objectLength(msg.payload);\nif (numDevices < 1) return null;\nvar device = msg.payload[0];\nvar attrList = [];\nvar keys = Object.keys(device);\nfor (var ii = 0; ii < keys.length; ++ii)\n{\n    if (device[keys[ii]].hasOwnProperty('type'))\n    {\n        if (device[keys[ii]].type == 'scalar')\n        {\n            if (device[keys[ii]].action == msg.prop)\n            {\n                attrList.push(keys[ii]);\n            }\n        }\n    }\n}\nif (attrList.length < 1) return null;\nreturn {\n    topic:'getAttrList',\n    payload:{\n        topic           : 'getAttrList',\n        userID          : msg.userID,\n        prop            : msg.prop,\n        name            : msg.name,\n        deviceType      : msg.deviceType,\n        trace           : msg.trace,\n        attrList        : attrList\n\n    }\n};\n\n",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 1230,
+        "y": 380,
+        "wires": [
+            [
+                "b3c6d83.10eff28"
+            ]
+        ]
+    },
+    {
+        "id": "9425396c.bb9898",
+        "type": "template",
+        "z": "a95862c5.7cda3",
+        "name": "javascript.specialscalar",
+        "field": "payload.javascript.specialscalar",
+        "fieldType": "msg",
+        "format": "javascript",
+        "syntax": "mustache",
+        "template": "        var plotStarted = false;\n        var plotTraces = [];\n        var plotStartTime = 0;\n        var plotLength = 0;\n        var plotLayout = {};\n \n        function onDocumentReadySpecial()\n        {\n        }\n        function onWebSocketMessageSpecial(msg)\n        {\n        }\n        function loadDeviceValuesSpecial(data)\n        {\n            upDatePlot();\n        }\n        function clearAttrOptionListSpecial(itrace)\n        {\n        }\n        function attrSelectedSpecial(itrace)\n        {\n        }\n\n        function selectAxis(itrace,axis)\n        {\n            devInfo[itrace].axis  = axis;\n        }\n        function selectPts(itrace)\n        {\n            devInfo[itrace].pts = !devInfo[itrace].pts;\n        }\n        function startPlot()\n        {\n            if (!plotStarted)\n            {\n                $(\"#startPlotButton\").html('Stop Plot');\n            }\n            else\n            {\n                $(\"#startPlotButton\").html('Start Plot');\n            }\n            plotStarted = !plotStarted;\n            if (!plotStarted)\n            {\n                plotTraces = [];\n                for (var itrace = 0; itrace < numTraces; ++itrace)\n                {\n                    deviceSelect[itrace].disabled = false;\n                    nameSelect[itrace].disabled = false;\n                    propSelect[itrace].disabled = false;\n                    attrSelect[itrace].disabled = false;\n                    $('#plotAxis_' + itrace.toString() + 'y1').prop( \"disabled\", false );\n                    $('#plotAxis_' + itrace.toString() + 'y2').prop( \"disabled\", false );\n                    $('#pts_' + itrace.toString()).prop( \"disabled\", false );\n                }\n                return;\n            }\n            plotTraces = [];\n            \n            for (var itrace = 0; itrace < numTraces; ++itrace)\n            {\n                deviceSelect[itrace].disabled = true;\n                nameSelect[itrace].disabled = true;\n                propSelect[itrace].disabled = true;\n                attrSelect[itrace].disabled = true;\n                $('#plotAxis_' + itrace.toString() + 'y1').prop( \"disabled\", true );\n                $('#plotAxis_' + itrace.toString() + 'y2').prop( \"disabled\", true );\n                $('#pts_' + itrace.toString()).prop( \"disabled\", true );\n                if (devInfo[itrace].name.length > 0)\n                {\n                    var modeType = 'lines';\n                    if (devInfo[itrace].pts) modeType = 'markers';\n                    var trace =  \n                    {\n                        x: [],\n                        y: [],\n                        name: devInfo[itrace].axis + ' ' + devInfo[itrace].deviceType + '.' + devInfo[itrace].name + '.' + devInfo[itrace].prop + '.' + devInfo[itrace].attr + ' (' + devInfo[itrace].device[devInfo[itrace].attr].unit + ')',\n                        yaxis: devInfo[itrace].axis,\n                        type: 'scatter',\n                        mode: modeType\n                    };\n                    plotTraces.push(trace);\n                }\n            }\n            plotLayout =\n            {\n                showlegend: true,\n                legend: {x: 0,y: 1.35},\n                xaxis: {title: 'Time (seconds)'},\n                yaxis: {title: 'y1'},\n                yaxis2: {title: 'y2',overlaying: 'y',side: 'right'}\n            };\n\n            plotStartTime = new Date().getTime();\n            Plotly.newPlot('timePlot', plotTraces, plotLayout);\n            plotLength = Number($(\"#plotLength\").val());\n        }\n        function upDatePlot()\n        {\n            if (!plotStarted) return;\n            var now = (new Date().getTime() - plotStartTime) / 1000;\n            var plotBeginning = now - plotLength;\n            var traceCount = 0;\n            var deltaT = (new Date().getTime() - plotStartTime) / 1000;\n            for (var itrace = 0; itrace < numTraces; ++itrace)\n            {\n                if (devInfo[itrace].name.length > 0)\n                {\n                    var removeDone = false;\n                    while(!removeDone)\n                    {\n                        if (plotTraces[traceCount].x[0] < plotBeginning)\n                        {\n                            plotTraces[traceCount].x.shift();\n                            plotTraces[traceCount].y.shift();\n                        }\n                        else\n                        {\n                            removeDone = true;\n                        }\n                    }\n                    plotTraces[traceCount].x.push(deltaT);\n                    plotTraces[traceCount].y.push(devInfo[itrace].device[devInfo[itrace].attr].value);\n                    ++traceCount;\n                }\n            }\n            Plotly.newPlot('timePlot', plotTraces, plotLayout);\n        }",
+        "output": "str",
+        "x": 330,
+        "y": 40,
+        "wires": [
+            [
+                "d190a007.a4973"
+            ]
+        ]
+    },
+    {
+        "id": "3461b8e4.df5368",
+        "type": "template",
+        "z": "a95862c5.7cda3",
+        "name": "Title",
+        "field": "payload.title",
+        "fieldType": "msg",
+        "format": "html",
+        "syntax": "mustache",
+        "template": "Scalar Plotter",
+        "output": "str",
+        "x": 790,
+        "y": 40,
+        "wires": [
+            [
+                "7f004bd6.823334"
+            ]
+        ]
+    },
+    {
+        "id": "27184b0f.921d04",
+        "type": "mongodb3 in",
+        "z": "a95862c5.7cda3",
+        "service": "_ext_",
+        "configNode": "9cd5ff5e.caf86",
+        "name": "",
+        "collection": "devices",
+        "operation": "find.toArray",
+        "x": 890,
+        "y": 380,
+        "wires": [
+            [
+                "f04f8ebf.018eb"
+            ]
+        ]
+    },
+    {
+        "id": "632d64e1.46100c",
+        "type": "function",
+        "z": "a95862c5.7cda3",
+        "name": "getDeviceValues",
+        "func": "var projectionFilter =  {projection:{_id:0}};\nvar newMsg = \n{\n    topic           : 'getDeviceValues',\n    userID          : msg.payload.userID,\n    payload         : [msg.payload.queryFilter, projectionFilter],\n};\nreturn newMsg;\n",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 630,
+        "y": 420,
+        "wires": [
+            [
+                "27184b0f.921d04"
+            ]
+        ]
+    },
+    {
+        "id": "7cf31e72.0f341",
+        "type": "function",
+        "z": "a95862c5.7cda3",
+        "name": "parse getDeviceValues",
+        "func": "function objectLength( object ) {\n    var length = 0;\n    for( var key in object ) {\n        if( object.hasOwnProperty(key) ) {\n            ++length;\n        }\n    }\n    return length;\n}\nvar numDevices = objectLength(msg.payload);\nif (numDevices < 1) return null;\nvar devices = [];\nfor (var idev = 0; idev < numDevices; ++idev) devices[idev] = msg.payload[idev];\nreturn {\n    topic:'getDeviceValues',\n    payload:{\n        topic           : 'getDeviceValues',\n        userID          : msg.userID,\n        devices         : devices,\n\n    }\n};\n",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 1260,
+        "y": 420,
+        "wires": [
+            [
+                "b3c6d83.10eff28"
+            ]
+        ]
+    },
+    {
+        "id": "fd4e03c5.239f4",
+        "type": "http in",
+        "z": "a95862c5.7cda3",
+        "name": "/scalarArchivePlotter",
+        "url": "/scalarArchivePlotter",
+        "method": "get",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 110,
+        "y": 100,
+        "wires": [
+            [
+                "4e98eb25.39be94"
+            ]
+        ]
+    },
+    {
+        "id": "2192ad41.3e4d72",
+        "type": "template",
+        "z": "a95862c5.7cda3",
+        "name": "Body",
+        "field": "payload.body",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "    <div width=\"100%\">\n        <table width=\"100%\">\n            <tr>\n                <td width=\"2%\" align=\"center\"><span class=\"tableHeading \">Tr</span></td>\n                <td width=\"19%\" align=\"center\"><span class=\"tableHeading \">Device</span></td>\n                <td width=\"19%\" align=\"center\"><span class=\"tableHeading \">Name</span></td>\n                <td width=\"19%\" align=\"center\"><span class=\"tableHeading \">Prop</span></td>\n                <td width=\"19%\" align=\"center\"><span class=\"tableHeading \">Attr</span></td>\n                <td width=\"8%\" align=\"center\"><span class=\"tableHeading \">value</span></td>\n                <td width=\"7%\" align=\"center\"><span class=\"tableHeading \">unit</span></td>\n                <td width=\"2%\" align=\"center\"><span class=\"tableHeading \">y1</span></td>\n                <td width=\"2%\" align=\"center\"><span class=\"tableHeading \">y2</span></td>\n                <td width=\"2%\" align=\"center\"><span class=\"tableHeading \">pt</span></td>\n            </tr>\n            <tr>\n                <td align=\"center\">\n                    <a id='csv0' href='' target='_blank' download=\"data0.csv\" class=\"csv-linked\">1</a>\n                </td>\n                <td>\n                    <select class=\"custom-select \" id=\"deviceSelect0\" onchange=\"deviceSelected(0)\">\n                        <option value='notSelected'></option>\n                    </select>\n                </td>\n                <td>\n                    <select class=\"custom-select \" id=\"nameSelect0\" onchange=\"nameSelected(0)\">\n                        <option value='notSelected'></option>\n                    </select>\n                </td>\n                <td>\n                    <select class=\"custom-select \" id=\"propSelect0\" onchange=\"propSelected(0)\">\n                        <option value='notSelected'></option>\n                    </select>\n                </td>\n                <td>\n                    <select class=\"custom-select \" id=\"attrSelect0\" onchange=\"attrSelected(0)\">\n                        <option value='notSelected'></option>\n                    </select>\n                </td>\n                <td align=\"center\"><span class=\"tableText \" id=\"valueSelect0\"></span></td>\n                <td align=\"center\"><span class=\"tableText \" id=\"unitSelect0\"></span></td>\n                <form action=\"\" >\n                   <td align=\"center\"><input id=\"plotAxis_0y1\" type=\"radio\" name=\"plotAxis_0\"  value=\"y1\"  onchange='selectAxis(0,\"y1\")' checked></td>\n                   <td align=\"center\"><input id=\"plotAxis_0y2\" type=\"radio\" name=\"plotAxis_0\"  value=\"y2\"  onchange='selectAxis(0,\"y2\")' ></td>\n                </form>\n                <td align=\"center\"><input id=\"pts_0\" type=\"checkbox\" name=\"pts_0\"  value=\"pts\"  onchange='selectPts(0)'></td>\n            </tr>\n            <tr>\n                <td align=\"center\">\n                    <a id='csv1' href='' target='_blank' download=\"data1.csv\" class=\"csv-linked\">2</a>\n                </td>\n                <td>\n                    <select class=\"custom-select\" id=\"deviceSelect1\" onchange=\"deviceSelected(1)\">\n                        <option value='notSelected'></option>\n                    </select>\n                </td>\n                <td>\n                    <select class=\"custom-select \" id=\"nameSelect1\" onchange=\"nameSelected(1)\">\n                        <option value='notSelected'></option>\n                    </select>\n                </td>\n                <td>\n                    <select class=\"custom-select\" id=\"propSelect1\" onchange=\"propSelected(1)\">\n                        <option value='notSelected'></option>\n                    </select>\n                </td>\n                <td>\n                    <select class=\"custom-select\" id=\"attrSelect1\" onchange=\"attrSelected(1)\">\n                        <option value='notSelected'></option>\n                    </select>\n                </td>\n                <td align=\"center\"><span class=\"tableText\" id=\"valueSelect1\"></span></td>\n                <td align=\"center\"><span class=\"tableText\" id=\"unitSelect1\"></span></td>\n                <form action=\"\" >\n                   <td align=\"center\"><input id=\"plotAxis_1y1\" type=\"radio\" name=\"plotAxis_1\"  value=\"y1\"  onchange='selectAxis(1,\"y1\")' checked></td>\n                   <td align=\"center\"><input id=\"plotAxis_1y2\" type=\"radio\" name=\"plotAxis_1\"  value=\"y2\"  onchange='selectAxis(1,\"y2\")' ></td>\n                </form>\n                <td align=\"center\"><input id=\"pts_1\" type=\"checkbox\" name=\"pts_1\"  value=\"pts\"  onchange='selectPts(1)'></td>\n            </tr>\n            <tr>\n                <td align=\"center\">\n                    <a id='csv2' href='' target='_blank' download=\"data2.csv\" class=\"csv-linked\">3</a>\n                </td>\n                <td>\n                    <select class=\"custom-select\" id=\"deviceSelect2\" onchange=\"deviceSelected(2)\">\n                        <option value='notSelected'></option>\n                    </select>\n                </td>\n                <td>\n                    <select class=\"custom-select \" id=\"nameSelect2\" onchange=\"nameSelected(2)\">\n                        <option value='notSelected'></option>\n                    </select>\n                </td>\n                <td>\n                    <select class=\"custom-select\" id=\"propSelect2\" onchange=\"propSelected(2)\">\n                        <option value='notSelected'></option>\n                    </select>\n                </td>\n                <td>\n                    <select class=\"custom-select\" id=\"attrSelect2\" onchange=\"attrSelected(2)\">\n                        <option value='notSelected'></option>\n                    </select>\n                </td>\n                <td align=\"center\"><span class=\"tableText\" id=\"valueSelect2\"></span></td>\n                <td align=\"center\"><span class=\"tableText\" id=\"unitSelect2\"></span></td>\n                <form action=\"\" >\n                   <td align=\"center\"><input id=\"plotAxis_2y1\" type=\"radio\" name=\"plotAxis_2\"  value=\"y1\"  onchange='selectAxis(2,\"y1\")' checked></td>\n                   <td align=\"center\"><input id=\"plotAxis_2y2\" type=\"radio\" name=\"plotAxis_2\"  value=\"y2\"  onchange='selectAxis(2,\"y2\")' ></td>\n                </form>\n                <td align=\"center\"><input id=\"pts_2\" type=\"checkbox\" name=\"pts_2\"  value=\"pts\"  onchange='selectPts(2)'></td>\n            </tr>\n            <tr>\n                <td align=\"center\">\n                    <a id='csv3' href='' target='_blank' download=\"data3.csv\" class=\"csv-linked\">4</a>\n                </td>\n                <td>\n                    <select class=\"custom-select\" id=\"deviceSelect3\" onchange=\"deviceSelected(3)\">\n                        <option value='notSelected'></option>\n                    </select>\n                </td>\n                <td>\n                    <select class=\"custom-select \" id=\"nameSelect3\" onchange=\"nameSelected(3)\">\n                        <option value='notSelected'></option>\n                    </select>\n                </td>\n                <td>\n                    <select class=\"custom-select\" id=\"propSelect3\" onchange=\"propSelected(3)\">\n                        <option value='notSelected'></option>\n                    </select>\n                </td>\n                <td>\n                    <select class=\"custom-select\" id=\"attrSelect3\" onchange=\"attrSelected(3)\">\n                        <option value='notSelected'></option>\n                    </select>\n                </td>\n                <td align=\"center\"><span class=\"tableText\" id=\"valueSelect3\"></span></td>\n                <td align=\"center\"><span class=\"tableText\" id=\"unitSelect3\"></span></td>\n                <form action=\"\" >\n                   <td align=\"center\"><input id=\"plotAxis_3y1\" type=\"radio\" name=\"plotAxis_3\"  value=\"y1\"  onchange='selectAxis(3,\"y1\")' checked></td>\n                   <td align=\"center\"><input id=\"plotAxis_3y2\" type=\"radio\" name=\"plotAxis_3\"  value=\"y2\"  onchange='selectAxis(3,\"y2\")' ></td>\n                </form>\n                <td align=\"center\"><input id=\"pts_3\" type=\"checkbox\" name=\"pts_3\"  value=\"pts\"  onchange='selectPts(3)'></td>\n            </tr>\n        </table>\n    </div>\n    <div id='plotSetup'>\n        <div class='row'>\n            <div class='col-md-12'>\n                <table id='plotSetupTable'>\n                    <tr>\n                        <td width=10% align=\"center\" class=\"tableHeading\">Max Plot Pts</td>\n                        <td width=20% align=\"center\" class=\"tableHeading\">Start</td>\n                        <td width=20% align=\"center\" class=\"tableHeading\">Stop</td>\n                        <td width=10% align=\"center\"></td>\n                    </tr>\n                    <tr>\n                        <td align=\"center\">\n                            <input class=\"form-control\" id=\"maxPtsToPlot\" type=\"text\" value=\"500\"/>\n                        </td>\n                        <td align=\"center\">\n                            <input class=\"form-control\" id=\"startDate\" type=\"text\"/>\n                        </td>\n                        <td align=\"center\">\n                            <input class=\"form-control\" id=\"stopDate\" type=\"text\"/>\n                        </td>\n                        <td align=\"center\">\n                            <button width=100% class=\"btn jumbotron-button\" id=\"getDataButton\" type=\"button\" onclick=\"getArchiveData()\">Get Data</button>\n                        </td>\n                    </tr>\n                </table>\n            </div>\n       </div>\n        <div class='row'>\n            <div class='col-md-12'>\n                <div class='card' id=\"timePlotCard\" >\n                    <p class='card-title'>Time Plot</p>\n                    <div class='card-body' align=\"center\">\n                        <div id=\"timePlot\" width=\"100%\" class=\"plot\"></div> \n                    </div>\n                </div>\n            </div>\n        </div>\n    </div>",
+        "output": "str",
+        "x": 910,
+        "y": 100,
+        "wires": [
+            [
+                "5eb7a557.b02d6c"
+            ]
+        ]
+    },
+    {
+        "id": "4e98eb25.39be94",
+        "type": "template",
+        "z": "a95862c5.7cda3",
+        "name": "javascript.specialscalar",
+        "field": "payload.javascript.specialscalar",
+        "fieldType": "msg",
+        "format": "javascript",
+        "syntax": "mustache",
+        "template": "        var startDate = 0;\n        var stopDate = 0;\n        var csvFile = [];\n        var archiveRequestList = [];\n        var archiveList = [];\n\n        function onDocumentReadySpecial()\n        {\n            for (var itrace = 0; itrace < numTraces; ++itrace)\n            {\n                $('#csv'+ itrace.toString()).removeAttr(\"href\");\n                $('#csv'+ itrace.toString()).css('color', 'black');\n                $('#csv'+ itrace.toString()).css('text-decoration', 'none');\n                $('#csv'+ itrace.toString()).css('font-weight', 'bold');\n                csvFile[itrace] = null;\n\n            }\n            var now = new Date();\n            console.log(now.toLocaleString('en-US',{year: 'numeric', month: '2-digit', day : '2-digit', hour12:false, hour: '2-digit', minute: '2-digit'}).replace(',', ''));\n            var then = new Date(now.getTime() - 3600 * 24 * 1000);\n            $( \"#startDate\" ).val(then.toLocaleString('en-US',{year: 'numeric', month: '2-digit', day : '2-digit', hour12:false, hour: '2-digit', minute: '2-digit'}).replace(',', ''));\n            $( \"#stopDate\" ).val(now.toLocaleString('en-US',{year: 'numeric', month: '2-digit', day : '2-digit', hour12:false, hour: '2-digit', minute: '2-digit'}).replace(',', ''));\n            $( function()\n            {\n                $('#startDate').datetimepicker();\n            } );\n            $( function()\n            {\n                $('#stopDate').datetimepicker();\n            } );\n            $('#timePlotCard').hide();\n        }\n        function onWebSocketMessageSpecial(msg)\n        {\n            switch(msg.topic)\n            {\n                case 'getArchiveValues':\n                    archiveList.push(msg.payload);\n                    if (archiveRequestList.length > 0)\n                    {\n                        getArchiveValues();\n                    }\n                    else\n                    {\n                        loadArchiveValues();\n                    }\n                    break;\n                default:\n                // code block\n            }\n        }\n        function loadDeviceValuesSpecial(data)\n        {\n        }\n        function clearAttrOptionListSpecial(itrace)\n        {\n            $('#csv'+ itrace.toString()).removeAttr(\"href\");\n            $('#csv'+ itrace.toString()).css('color', 'black');\n            $('#csv'+ itrace.toString()).css('text-decoration', 'none');\n            $('#csv'+ itrace.toString()).css('font-weight', 'bold');\n       }\n        function attrSelectedSpecial(itrace)\n        {\n            $('#csv'+ itrace.toString()).removeAttr(\"href\");\n            $('#csv'+ itrace.toString()).css('color', 'black');\n            $('#csv'+ itrace.toString()).css('text-decoration', 'none');\n            $('#csv'+ itrace.toString()).css('font-weight', 'bold');\n        }\n        function selectAxis(itrace,axis)\n        {\n            devInfo[itrace].axis  = axis;\n        }\n        function selectPts(itrace)\n        {\n            devInfo[itrace].pts = !devInfo[itrace].pts;\n        }\n        function getArchiveData()\n        {\n            archiveRequestList = [];\n            archiveList = [];\n            startDate = new Date($( \"#startDate\" ).val()).getTime();\n            stopDate = new Date($( \"#stopDate\" ).val()).getTime();\n            var traceCount = 0;\n            for (var itrace = 0; itrace < numTraces; ++itrace)\n            {\n                if (devInfo[itrace].name.length > 0) \n                {\n                    archiveRequestList[traceCount] = \n                    {\n                        deviceType  : devInfo[itrace].deviceType, \n                        name        : devInfo[itrace].name, \n                        prop        : devInfo[itrace].prop, \n                        attr        : devInfo[itrace].attr,\n                        startDate   : startDate, \n                        stopDate    : stopDate,\n                        itrace      : itrace\n                    };\n                    ++traceCount;\n                }\n            }\n            if (traceCount < 1) return;\n            $('#plotSetupTable').hide();\n            $('#timePlotCard').hide();\n            for (var itrace = 0; itrace < numTraces; ++itrace)\n            {\n                $('#csv'+ itrace.toString()).removeAttr(\"href\");\n                $('#csv'+ itrace.toString()).css('color', 'black');\n                $('#csv'+ itrace.toString()).css('text-decoration', 'none');\n                $('#csv'+ itrace.toString()).css('font-weight', 'bold');\n            }\n            messageDialog('Alert', 'Wait!', 'Requesting data ...');\n            getArchiveValues();\n\n        }\n        function getArchiveValues()\n        {\n            var maxPtsToPlot = Number($( \"#maxPtsToPlot\" ).val());\n            sendWebSocketMessageObject(\n                {\n                    topic       : 'getArchiveValues',\n                    userID      : userID,\n                    device      : archiveRequestList[0],\n                    maxPtsToPlot: maxPtsToPlot\n                });\n            archiveRequestList.shift();\n            return;\n        }\n        function loadArchiveValues()\n        {\n            $( \"#messageDialog\" ).dialog('close');\n            $('#plotSetupTable').show();\n            var plotTraces = [];\n            for (ii = 0; ii < archiveList.length; ++ii)\n            {\n                itrace = archiveList[ii].itrace;\n                var modeType = 'lines';\n                if (devInfo[itrace].pts) modeType = 'markers';\n                var trace =  \n                {\n                    x: [],\n                    y: [],\n                    name: devInfo[itrace].axis + ' ' + devInfo[itrace].deviceType + '.' + devInfo[itrace].name + '.' + devInfo[itrace].prop + '.' + devInfo[itrace].attr + ' (' + devInfo[itrace].device[devInfo[itrace].attr].unit + ')',\n                    yaxis: devInfo[itrace].axis,\n                    type: 'scatter',\n                    mode: modeType\n                }\n                for (var ipt = 0; ipt < archiveList[ii].trace.length; ++ipt)\n                {\n                    trace.x[ipt] = (archiveList[ii].trace[ipt].timeStamp - startDate) / 3600000;\n                    trace.y[ipt] = archiveList[ii].trace[ipt].value;\n                }\n                plotTraces.push(trace);\n                makeCsvFile(ii);\n            }\n            var plotLayout =\n            {\n                showlegend: true,\n                legend: {x: 0,y: 1.35},\n                xaxis: {title: 'Hours  since '  + new Date(startDate).toLocaleString()},\n                yaxis: {title: 'y1'},\n                yaxis2: {title: 'y2',overlaying: 'y',side: 'right'}\n            };\n            $('#timePlotCard').show();\n            Plotly.newPlot('timePlot', plotTraces, plotLayout);\n        }\n        function makeCsvFile(ii)\n        {\n            var dataString = '';\n            var startT = archiveList[ii].trace[0].timeStamp;\n            var itrace = archiveList[ii].itrace;\n        \n            dataString = dataString + 'Device,' + devInfo[itrace].deviceType + ',' + devInfo[itrace].name + ',' + devInfo[itrace].prop + ',' + devInfo[itrace].attr  +'\\n';\n            dataString = dataString + 'StartDate,' + new Date(startT).toLocaleString('en-US',{year: 'numeric', month: '2-digit', day : '2-digit', hour12:false, hour: '2-digit', minute: '2-digit'}) + '\\n';\n            dataString = dataString + 'StartDate (mS),' + startT.toString() + '\\n';\n            dataString = dataString + 'Time (sec), Value (' + devInfo[itrace].device[devInfo[itrace].attr].unit + ')\\n';\n            for (var ipt = 0; ipt < archiveList[ii].trace.length; ++ipt)\n            {\n                var x = (archiveList[ii].trace[ipt].timeStamp - startT) / 1000;\n                var y = archiveList[ii].trace[ipt].value;\n                dataString = dataString + x.toString() + ',' + y.toString() + '\\n';\n            }\n            var data = new Blob([dataString], {type: 'text/plain'});\n        \n            // If we are replacing a previously generated file we need to\n            // manually revoke the object URL to avoid memory leaks.\n            if (csvFile[itrace] !== null) {\n              window.URL.revokeObjectURL(csvFile[itrace]);\n            }\n        \n            csvFile[itrace] = window.URL.createObjectURL(data);\n            // returns a URL you can use as a href\n            $('#csv'+ itrace.toString()).css('color', 'blue');\n            $('#csv'+ itrace.toString()).css('text-decoration', 'underline');\n            $('#csv'+ itrace.toString()).css('font-weight', 'bold');\n            $('#csv'+ itrace.toString()).attr(\"href\", csvFile[itrace]);\n            $('#csv'+ itrace.toString()).attr(\"download\", devInfo[itrace].deviceType + '-' + devInfo[itrace].name + '-' + devInfo[itrace].prop + '-' + devInfo[itrace].attr + '.csv');\n        \n        }\n",
+        "output": "str",
+        "x": 330,
+        "y": 100,
+        "wires": [
+            [
+                "890c6b9d.5e39c8"
+            ]
+        ]
+    },
+    {
+        "id": "84360bd6.f4be38",
+        "type": "template",
+        "z": "a95862c5.7cda3",
+        "name": "Title",
+        "field": "payload.title",
+        "fieldType": "msg",
+        "format": "html",
+        "syntax": "mustache",
+        "template": "Scalar Archive Plotter",
+        "output": "str",
+        "x": 790,
+        "y": 100,
+        "wires": [
+            [
+                "2192ad41.3e4d72"
+            ]
+        ]
+    },
+    {
+        "id": "d38bb432.76d7a8",
+        "type": "websocket in",
+        "z": "a95862c5.7cda3",
+        "name": "ScalarArchivePlotter",
+        "server": "7d0d644b.a6670c",
+        "client": "",
+        "x": 130,
+        "y": 380,
+        "wires": [
+            [
+                "71edc863.1acbd8"
+            ]
+        ]
+    },
+    {
+        "id": "19b9aa9c.eec375",
+        "type": "websocket out",
+        "z": "a95862c5.7cda3",
+        "name": "ScalarArchivePlotter",
+        "server": "7d0d644b.a6670c",
+        "client": "",
+        "x": 1660,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "b3c6d83.10eff28",
+        "type": "link out",
+        "z": "a95862c5.7cda3",
+        "name": "Scalar DB Info",
+        "links": [
+            "72b97cc1.06abb4"
+        ],
+        "x": 1415,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "72b97cc1.06abb4",
+        "type": "link in",
+        "z": "a95862c5.7cda3",
+        "name": "",
+        "links": [
+            "b3c6d83.10eff28",
+            "e738e9fa.ef2ad8"
+        ],
+        "x": 1495,
+        "y": 360,
+        "wires": [
+            [
+                "2eb4d57a.d2889a",
+                "19b9aa9c.eec375",
+                "1f08a1f8.9df7ae"
+            ]
+        ]
+    },
+    {
+        "id": "a6b301be.c5a54",
+        "type": "function",
+        "z": "a95862c5.7cda3",
+        "name": "getArchiveValues",
+        "func": "var projectionFilter =  \n{\n    projection:\n    {\n        _id                         :   0, \n        deviceType                  :   1,  \n        name                        :   1,  \n        timeStamp                   :   1, \n        [msg.payload.device.attr]     :   1\n    } \n};\nvar queryFilter = \n{\n    $and :\n    [\n        {\n            deviceType: msg.payload.device.deviceType\n        },\n        {\n            name: msg.payload.device.name\n        },\n        {\n            timeStamp :\n            {\n                $gte: msg.payload.device.startDate,\n                $lte: msg.payload.device.stopDate\n            }\n        }\n    ] \n    \n}\nvar newMsg = \n{\n    topic           : 'getArchiveValues',\n    userID          : msg.payload.userID,\n    payload         : [queryFilter, projectionFilter],\n    device          : msg.payload.device,\n    maxPtsToPlot    : msg.payload.maxPtsToPlot,\n    itrace          : msg.payload.device.itrace\n};\nreturn newMsg;\n",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 630,
+        "y": 460,
+        "wires": [
+            [
+                "6ec53d76.2f8f04"
+            ]
+        ]
+    },
+    {
+        "id": "6ec53d76.2f8f04",
+        "type": "mongodb3 in",
+        "z": "a95862c5.7cda3",
+        "service": "_ext_",
+        "configNode": "9cd5ff5e.caf86",
+        "name": "",
+        "collection": "archiver",
+        "operation": "find.toArray",
+        "x": 890,
+        "y": 460,
+        "wires": [
+            [
+                "5f0039c.06c6dc8"
+            ]
+        ]
+    },
+    {
+        "id": "5f0039c.06c6dc8",
+        "type": "function",
+        "z": "a95862c5.7cda3",
+        "name": "Sort Archive Data",
+        "func": "function objectLength( object ) {\n    var length = 0;\n    for( var key in object ) {\n        if( object.hasOwnProperty(key) ) {\n            ++length;\n        }\n    }\n    return length;\n}\n\nfunction sortByKey(arr, key) \n{\n    return arr.sort( function(a, b) \n        {\n            var x = a[key]; \n            var y = b[key];\n            return ((x < y) ? -1 : ((x > y) ? 1 : 0));\n        } );\n}\n\nvar numRecords = objectLength(msg.payload);\nif (numRecords < 1)\n{\n    return {\n        topic:'getArchiveValues',\n        payload:{\n            topic           : 'getArchiveValues',\n            payload         : {itrace: msg.itrace, trace:null},\n            userID          : msg.userID,\n        }\n    };\n}\nvar records = [];\nfor (var ii = 0; ii < numRecords; ++ii) records[ii] = msg.payload[ii]; \nsortByKey(records, 'timeStamp');\nvar trace = [];\nvar maxPts = msg.maxPtsToPlot;\nvar nstep = numRecords / msg.maxPtsToPlot;\nif (nstep < 1.0) \n{\n    nstep = 1.0;\n    maxPts = numRecords;\n}\nvar icnt = 0;\n\nwhile(icnt < maxPts)\n{\n    var index = Math.round(icnt * nstep);\n    trace[icnt] = {timeStamp: records[index].timeStamp, value: records[index][msg.device.attr]};\n    ++icnt\n}\n\nreturn {\n    topic:'getArchiveValues',\n    payload:{\n        topic           : 'getArchiveValues',\n        payload         : {itrace: msg.itrace, trace:trace},\n        userID          : msg.userID,\n    }\n};\n",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 1250,
+        "y": 460,
+        "wires": [
+            [
+                "b3c6d83.10eff28"
+            ]
+        ]
+    },
+    {
+        "id": "eefca70b.a45c48",
+        "type": "http in",
+        "z": "a95862c5.7cda3",
+        "name": "/scalarViewer",
+        "url": "/scalarViewer",
+        "method": "get",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 90,
+        "y": 160,
+        "wires": [
+            [
+                "adbf83f2.2f335"
+            ]
+        ]
+    },
+    {
+        "id": "23563991.927b36",
+        "type": "template",
+        "z": "a95862c5.7cda3",
+        "name": "Body",
+        "field": "payload.body",
+        "fieldType": "msg",
+        "format": "html",
+        "syntax": "mustache",
+        "template": "    <div width=\"100%\">\n        <table width=\"100%\">\n            <tr>\n                <td width=\"9%\"  align=\"center\"><span class=\"tableHeading \">Tr</span></td>\n                <td width=\"13%\" align=\"center\"><span class=\"tableHeading \">Device</span></td>\n                <td width=\"13%\" align=\"center\"><span class=\"tableHeading \">Name</span></td>\n                <td width=\"13%\" align=\"center\"><span class=\"tableHeading \">Prop</span></td>\n                <td width=\"13%\" align=\"center\"><span class=\"tableHeading \">Attr</span></td>\n                <td width=\"13%\" align=\"center\"><span class=\"tableHeading \">value</span></td>\n                <td width=\"13%\" align=\"center\"><span class=\"tableHeading \">unit</span></td>\n                <td width=\"13%\" align=\"center\"><span class=\"tableHeading \">Edit</span></td>\n            </tr>\n            <tr>\n                <td align=\"center\"><span class=\"tableText\">1</span></td>\n                <td>\n                    <select class=\"custom-select \" id=\"deviceSelect0\" onchange=\"deviceSelected(0)\">\n                        <option value='notSelected'></option>\n                    </select>\n                </td>\n                <td>\n                    <select class=\"custom-select \" id=\"nameSelect0\" onchange=\"nameSelected(0)\">\n                        <option value='notSelected'></option>\n                    </select>\n                </td>\n                <td>\n                    <select class=\"custom-select \" id=\"propSelect0\" onchange=\"propSelected(0)\">\n                        <option value='notSelected'></option>\n                    </select>\n                </td>\n                <td>\n                    <select class=\"custom-select \" id=\"attrSelect0\" onchange=\"attrSelected(0)\">\n                        <option value='notSelected'></option>\n                    </select>\n                </td>\n                <td align=\"center\"><span class=\"tableText \" id=\"valueSelect0\"></span></td>\n                <td align=\"center\"><span class=\"tableText \" id=\"unitSelect0\"></span></td>\n                <td align=\"center\">\n                    <button class=\"btn jumbotron-button btn-block\" id=\"editDeviceButton0\" type=\"button\" onclick=\"editDevice(0)\">Edit</button>\n                </td>\n            </tr>\n            <tr>\n                <td align=\"center\"><span class=\"tableText\">2</span></td>\n                <td>\n                    <select class=\"custom-select\" id=\"deviceSelect1\" onchange=\"deviceSelected(1)\">\n                        <option value='notSelected'></option>\n                    </select>\n                </td>\n                <td>\n                    <select class=\"custom-select \" id=\"nameSelect1\" onchange=\"nameSelected(1)\">\n                        <option value='notSelected'></option>\n                    </select>\n                </td>\n                <td>\n                    <select class=\"custom-select\" id=\"propSelect1\" onchange=\"propSelected(1)\">\n                        <option value='notSelected'></option>\n                    </select>\n                </td>\n                <td>\n                    <select class=\"custom-select\" id=\"attrSelect1\" onchange=\"attrSelected(1)\">\n                        <option value='notSelected'></option>\n                    </select>\n                </td>\n                <td align=\"center\"><span class=\"tableText\" id=\"valueSelect1\"></span></td>\n                <td align=\"center\"><span class=\"tableText\" id=\"unitSelect1\"></span></td>\n                <td align=\"center\">\n                    <button class=\"btn jumbotron-button btn-block\" id=\"editDeviceButton1\" type=\"button\" onclick=\"editDevice(1)\">Edit</button>\n                </td>\n            </tr>\n            <tr>\n                <td align=\"center\"><span class=\"tableText\">3</span></td>\n                <td>\n                    <select class=\"custom-select\" id=\"deviceSelect2\" onchange=\"deviceSelected(2)\">\n                        <option value='notSelected'></option>\n                    </select>\n                </td>\n                <td>\n                    <select class=\"custom-select \" id=\"nameSelect2\" onchange=\"nameSelected(2)\">\n                        <option value='notSelected'></option>\n                    </select>\n                </td>\n                <td>\n                    <select class=\"custom-select\" id=\"propSelect2\" onchange=\"propSelected(2)\">\n                        <option value='notSelected'></option>\n                    </select>\n                </td>\n                <td>\n                    <select class=\"custom-select\" id=\"attrSelect2\" onchange=\"attrSelected(2)\">\n                        <option value='notSelected'></option>\n                    </select>\n                </td>\n                <td align=\"center\"><span class=\"tableText\" id=\"valueSelect2\"></span></td>\n                <td align=\"center\"><span class=\"tableText\" id=\"unitSelect2\"></span></td>\n                <td align=\"center\">\n                    <button class=\"btn jumbotron-button btn-block\" id=\"editDeviceButton2\" type=\"button\" onclick=\"editDevice(2)\">Edit</button>\n                </td>\n            </tr>\n            <tr>\n                <td align=\"center\"><span class=\"tableText\">4</span></td>\n                <td>\n                    <select class=\"custom-select\" id=\"deviceSelect3\" onchange=\"deviceSelected(3)\">\n                        <option value='notSelected'></option>\n                    </select>\n                </td>\n                <td>\n                    <select class=\"custom-select \" id=\"nameSelect3\" onchange=\"nameSelected(3)\">\n                        <option value='notSelected'></option>\n                    </select>\n                </td>\n                <td>\n                    <select class=\"custom-select\" id=\"propSelect3\" onchange=\"propSelected(3)\">\n                        <option value='notSelected'></option>\n                    </select>\n                </td>\n                <td>\n                    <select class=\"custom-select\" id=\"attrSelect3\" onchange=\"attrSelected(3)\">\n                        <option value='notSelected'></option>\n                    </select>\n                </td>\n                <td align=\"center\"><span class=\"tableText\" id=\"valueSelect3\"></span></td>\n                <td align=\"center\"><span class=\"tableText\" id=\"unitSelect3\"></span></td>\n                <td align=\"center\">\n                    <button class=\"btn jumbotron-button btn-block\" id=\"editDeviceButton3\" type=\"button\" onclick=\"editDevice(3)\">Edit</button>\n                </td>\n            </tr>\n        </table>\n    </div>\n    <div id=\"editDeviceDialog\" title=\"Edit Device\" class='card'>\n        <p class='card-title' id='editDeviceDialogAttribute'>Attribute</p>\n        <div class='card-body'>\n            <table>\n                <tr>\n                    <td width=\"50%\" align=\"left\">  <span class=\"tableHeading\">Value</span></td>\n                    <td width=\"50%\" align=\"right\"><input class=\"form-control\" id=\"attrValue\" type=\"text\" value=\"0\" /></td>\n                </tr>\n                <tr>\n                    <td width=\"50%\" align=\"left\">  <span class=\"tableHeading\">LoLo</span></td>\n                    <td width=\"50%\" align=\"right\"><input class=\"form-control\" id=\"loloAlarm\" type=\"text\" value=\"0\" /></td>\n                </tr>\n                <tr>\n                    <td width=\"50%\" align=\"left\">  <span class=\"tableHeading\">LOW</span></td>\n                    <td width=\"50%\" align=\"right\"><input class=\"form-control\" id=\"lowAlarm\" type=\"text\" value=\"0\" /></td>\n                </tr>\n                <tr>\n                    <td width=\"50%\" align=\"left\">  <span class=\"tableHeading\">HIGH</span></td>\n                    <td width=\"50%\" align=\"right\"><input class=\"form-control\" id=\"highAlarm\" type=\"text\" value=\"0\" /></td>\n                </tr>\n                <tr>\n                    <td width=\"50%\" align=\"left\">  <span class=\"tableHeading\">HiHi</span></td>\n                    <td width=\"50%\" align=\"right\"><input class=\"form-control\" id=\"hihiAlarm\" type=\"text\" value=\"0\" /></td>\n                </tr>\n                <tr>\n                    <td width=\"50%\" align=\"left\">  <span class=\"tableHeading\">Notify Name</span></td>\n                    <td width=\"50%\" align=\"right\"><input class=\"form-control\" id=\"notifyName\" type=\"text\" value=\"\" /></td>\n                </tr>\n                <tr>\n                    <td width=\"50%\" align=\"left\">  <span class=\"tableHeading\">Notify Number</span></td>\n                    <td width=\"50%\" align=\"right\"><input class=\"form-control\" id=\"notifyNumber\" type=\"text\" value=\"\" /></td>\n                </tr>\n            </table>\n        </div>\n    </div>",
+        "output": "str",
+        "x": 910,
+        "y": 160,
+        "wires": [
+            [
+                "e8924e13.3c251"
+            ]
+        ]
+    },
+    {
+        "id": "c7806a14.8da438",
+        "type": "template",
+        "z": "a95862c5.7cda3",
+        "name": "Title",
+        "field": "payload.title",
+        "fieldType": "msg",
+        "format": "html",
+        "syntax": "mustache",
+        "template": "Scalar Viewer",
+        "output": "str",
+        "x": 790,
+        "y": 160,
+        "wires": [
+            [
+                "23563991.927b36"
+            ]
+        ]
+    },
+    {
+        "id": "1f08a1f8.9df7ae",
+        "type": "websocket out",
+        "z": "a95862c5.7cda3",
+        "name": "ScalarViewer",
+        "server": "ebe834ce.572438",
+        "client": "",
+        "x": 1630,
+        "y": 420,
+        "wires": []
+    },
+    {
+        "id": "84b90838.4827f8",
+        "type": "websocket in",
+        "z": "a95862c5.7cda3",
+        "name": "ScalarViewer",
+        "server": "ebe834ce.572438",
+        "client": "",
+        "x": 110,
+        "y": 440,
+        "wires": [
+            [
+                "71edc863.1acbd8"
+            ]
+        ]
+    },
+    {
+        "id": "4e740245.682f0c",
+        "type": "function",
+        "z": "a95862c5.7cda3",
+        "name": "sendSettingToMqtt",
+        "func": "return {\n    topic   : msg.payload.mqttMessage.topic, \n    payload : msg.payload.mqttMessage.payload, \n    token   : msg.payload.token, \n    userID  : msg.payload.userID };\n",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 630,
+        "y": 500,
+        "wires": [
+            [
+                "cc184ba6.22e578"
+            ]
+        ]
+    },
+    {
+        "id": "22b2cfd1.dc8ed",
+        "type": "mqtt out",
+        "z": "a95862c5.7cda3",
+        "name": "Publish setting",
+        "topic": "",
+        "qos": "0",
+        "retain": "false",
+        "broker": "84d80994.260508",
+        "x": 1300,
+        "y": 500,
+        "wires": []
+    },
+    {
+        "id": "31bc2cbb.c3f254",
+        "type": "http in",
+        "z": "a95862c5.7cda3",
+        "name": "/scalarAlarmScanner",
+        "url": "/scalarAlarmScanner",
+        "method": "get",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 110,
+        "y": 220,
+        "wires": [
+            [
+                "70cb6205.e9e30c"
+            ]
+        ]
+    },
+    {
+        "id": "43da20a2.65ba6",
+        "type": "template",
+        "z": "a95862c5.7cda3",
+        "name": "Body",
+        "field": "payload.body",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "    <div width=\"100%\">\n        <div class=\"row\"> \n            <div class=\"col-md-3\" align=\"center\" style=\"padding-top:10px;padding-bottom:10px;\"></div>\n            <div class=\"col-md-6\" align=\"center\" style=\"padding-top:10px;padding-bottom:10px;\">\n                <button class=\"btn jumbotron-button btn-block\" id=\"toggleSoundButton\" type=\"button\" onclick=\"toggleSound()\">Turn Sound On</button>\n            </div>\n            <div class=\"col-md-3\" align=\"center\" style=\"padding-top:10px;padding-bottom:10px;\"></div>\n        </div>\n    </div>\n    <div width=\"100%\">\n        <table width=\"100%\" id='alarmTable'>\n            <tr class=\"tableHeading\">\n                <td width='12%'>Alarm</td>\n                <td width='12%'>Device</td>\n                <td width='12%'>Name</td>\n                <td width='12%'>Property</td>\n                <td width='12%'>Attribute</td>\n                <td width='12%'>Value</td>\n                <td width='12%'>Unit</td>\n                <td width='12%'>Type</td>\n            </tr>\n        </table>\n    </div>",
+        "output": "str",
+        "x": 610,
+        "y": 220,
+        "wires": [
+            [
+                "4b020c5e.179984"
+            ]
+        ]
+    },
+    {
+        "id": "70cb6205.e9e30c",
+        "type": "template",
+        "z": "a95862c5.7cda3",
+        "name": "JavaScript",
+        "field": "payload.javascript",
+        "fieldType": "msg",
+        "format": "javascript",
+        "syntax": "mustache",
+        "template": "        var ws;\n        var retries = 0;\n        var userID = -1;\n        var audioAlarm = new Audio('/audio/alarm.ogg');\n        var alarmSoundOn = false;\n        var soundLastPlayed = 0;\n        var soundInterval = 4000;\n        \n        useWebSockets(true);\n        function onDocumentReady()\n        {\n            createAlarmTableRows(100);\n        }\n        function onWebSocketOpen()\n        {\n        }\n        function onWebSocketClose()\n        {\n            \n        }\n        function onWebSocketMessage(msg)\n        {\n            switch(msg.topic)\n            {\n               case 'alarmList':\n                    alarmScan(msg.payload);\n                    break;\n                default:\n                // code block\n            }\n        }\n        function createAlarmTableRows(nrows)\n        {\n            var alarmTable = document.getElementById('alarmTable');\n            for (var irow = 0; irow < nrows; ++irow)\n            {\n                var row = alarmTable.insertRow(irow + 1);\n                row.setAttribute(\"id\", \"alarmTable\" + irow.toString());\n                row.setAttribute(\"class\", \"tableText\");\n                var iconCell = row.insertCell(0);\n                var devCell  = row.insertCell(1);\n                var nameCell = row.insertCell(2);\n                var propCell = row.insertCell(3);\n                var attrCell = row.insertCell(4);\n                var valueCell= row.insertCell(5);\n                var unitCell = row.insertCell(6);\n                var typeCell = row.insertCell(7);\n                iconCell.setAttribute(\"id\", \"alarmTable\" + irow.toString() + \"_icon\");\n                devCell.setAttribute( \"id\", \"alarmTable\" + irow.toString() + \"_dev\");\n                nameCell.setAttribute( \"id\", \"alarmTable\" + irow.toString() + \"_name\");\n                propCell.setAttribute( \"id\", \"alarmTable\" + irow.toString() + \"_prop\");\n                attrCell.setAttribute(\"id\", \"alarmTable\" + irow.toString() + \"_attr\");\n                valueCell.setAttribute(\"id\", \"alarmTable\" + irow.toString() + \"_value\");\n                unitCell.setAttribute(\"id\", \"alarmTable\" + irow.toString() + \"_unit\");\n                typeCell.setAttribute(\"id\", \"alarmTable\" + irow.toString() + \"_type\");\n                $('#alarmTable' + irow.toString()).hide();\n                iconCell.innerHTML = \"<img id='alarmTable\" + irow.toString() + \"_led'\" + \" src='/img/redLight.png' height='50px'/>\";\n            }\n        \n        }\n        function alarmScan(alarmList)\n        {\n            var deviceInfo = [];\n            var nrows = $('#alarmTable tr').length;\n            nrows = nrows - 1;\n            if (alarmList.length > nrows) alert('Too many alarms to display!');\n            for (var idev = 0; idev < alarmList.length; ++idev)\n            {\n                $('#alarmTable' + idev.toString()).show();\n                $('#alarmTable' + idev.toString() + '_dev').html(alarmList[idev].deviceType);\n                $('#alarmTable' + idev.toString() + '_name').html(alarmList[idev].name);\n                $('#alarmTable' + idev.toString() + '_prop').html(alarmList[idev].prop);\n                $('#alarmTable' + idev.toString() + '_attr').html(alarmList[idev].attr);\n                $('#alarmTable' + idev.toString() + '_value').html(alarmList[idev].value);\n                $('#alarmTable' + idev.toString() + '_unit').html(alarmList[idev].unit);\n                var type = '';\n                if (alarmList[idev].alarm == 1) type = 'LOW';\n                if (alarmList[idev].alarm == 2) type = 'HIGH';\n                if (alarmList[idev].alarm == 3) type = 'LOLO';\n                if (alarmList[idev].alarm == 4) type = 'HIHI';\n                $('#alarmTable' + idev.toString() + '_type').html(type);\n                if (alarmList[idev].alarm < 3)\n                {\n                    $('#alarmTable' + idev.toString() + '_led').attr('src','/img/yellowLight.png');\n                }\n                else\n                {\n                    $('#alarmTable' + idev.toString() + '_led').attr('src','/img/redLight.png');\n                    if (alarmSoundOn)\n                    {\n                        if ((new Date().getTime() - soundLastPlayed) > soundInterval)\n                        {\n                            audioAlarm.play();\n                            soundLastPlayed = new Date().getTime();\n                        }\n                    }\n                    \n                }\n        \n            }\n            for (var idev = alarmList.length; idev < nrows; ++idev)\n            {\n                $('#alarmTable' + idev.toString()).hide();\n            }\n        \n        }\n        function toggleSound()\n        {\n            alarmSoundOn = !alarmSoundOn;\n            var soundButtonText = 'Turn Sound On';\n            if (alarmSoundOn) soundButtonText = 'Turn Sound Off';\n            $('#toggleSoundButton').html(soundButtonText);\n        }",
+        "output": "str",
+        "x": 350,
+        "y": 220,
+        "wires": [
+            [
+                "38546617.5225da"
+            ]
+        ]
+    },
+    {
+        "id": "38546617.5225da",
+        "type": "template",
+        "z": "a95862c5.7cda3",
+        "name": "Title",
+        "field": "payload.title",
+        "fieldType": "msg",
+        "format": "html",
+        "syntax": "mustache",
+        "template": "Alarm Scanner",
+        "output": "str",
+        "x": 490,
+        "y": 220,
+        "wires": [
+            [
+                "43da20a2.65ba6"
+            ]
+        ]
+    },
+    {
+        "id": "47e7921f.a97cfc",
+        "type": "websocket out",
+        "z": "a95862c5.7cda3",
+        "name": "/scalarAlarmScanner",
+        "server": "9f081214.3b0ba",
+        "client": "",
+        "x": 800,
+        "y": 740,
+        "wires": []
+    },
+    {
+        "id": "7ad46f1.356d19",
+        "type": "mongodb3 in",
+        "z": "a95862c5.7cda3",
+        "service": "_ext_",
+        "configNode": "9cd5ff5e.caf86",
+        "name": "",
+        "collection": "devices",
+        "operation": "find.toArray",
+        "x": 370,
+        "y": 740,
+        "wires": [
+            [
+                "fe6e5a8c.e734e8"
+            ]
+        ]
+    },
+    {
+        "id": "bfb19200.3718d",
+        "type": "inject",
+        "z": "a95862c5.7cda3",
+        "name": "Every 10 sec",
+        "topic": "",
+        "payload": "'name'",
+        "payloadType": "str",
+        "repeat": "10",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 140,
+        "y": 740,
+        "wires": [
+            [
+                "7ad46f1.356d19"
+            ]
+        ]
+    },
+    {
+        "id": "fe6e5a8c.e734e8",
+        "type": "function",
+        "z": "a95862c5.7cda3",
+        "name": "Scan for alarms",
+        "func": "function objectLength( object ) {\n    var length = 0;\n    for( var key in object ) {\n        if( object.hasOwnProperty(key) ) {\n            ++length;\n        }\n    }\n    return length;\n}\nvar oldAlarmList = context.get('oldAlarmList')\nif (oldAlarmList == undefined) oldAlarmList = [];\nvar numDevices = objectLength(msg.payload);\nvar props = ['readings', 'settings'];\nvar alarmList = [];\nvar alarmCount = 0;\nfor (var idev = 0; idev < numDevices; ++idev)\n{\n    var device = msg.payload[idev];\n    var keys = Object.keys(device);\n    for (var ii = 0; ii < keys.length; ++ii)\n    {\n        if (device[keys[ii]].hasOwnProperty('type'))\n        {\n            if (device[keys[ii]].type == 'scalar')\n            {\n                if (device[keys[ii]].alarm.value > 0)\n                {\n                    alarmList[alarmCount] = \n                    {\n                        deviceType: device.deviceType,\n                        name  : device.name,\n                        prop  : device[keys[ii]].action,\n                        attr  : keys[ii],\n                        value : device[keys[ii]].value,\n                        unit  : device[keys[ii]].unit,\n                        alarm : device[keys[ii]].alarm.value,\n                        id    : device.deviceType + '-' +  device.name + '-' +  device[keys[ii]].action + '-' + keys[ii],\n                        notify: device[keys[ii]].alarm.notify\n                    };\n                    ++alarmCount;\n                }\n            }\n        }\n    }\n}\n\nvar newAlarmList = [];\nvar newAlarmCount = 0;\nfor (var ialarm = 0; ialarm < alarmCount; ++ialarm)\n{\n    var oldAlarm = oldAlarmList.find(oldAlarm => oldAlarm.id === alarmList[ialarm].id);\n    if (oldAlarm == undefined) \n    {\n        newAlarmList[newAlarmCount] = alarmList[ialarm];\n        ++newAlarmCount;\n    }\n}\ncontext.set('oldAlarmList', alarmList);\nreturn [{topic:'alarmList', payload:{topic:'alarmList',payload:alarmList}},{topic:'newAlarmList', payload:newAlarmList}];",
+        "outputs": 2,
+        "noerr": 0,
+        "x": 600,
+        "y": 740,
+        "wires": [
+            [
+                "47e7921f.a97cfc"
+            ],
+            [
+                "d3e2e235.0be94"
+            ]
+        ]
+    },
+    {
+        "id": "1c9cfcbb.699133",
+        "type": "sendsms",
+        "z": "a95862c5.7cda3",
+        "creds": "aba473be.dd39f",
+        "to": "{{msg.to}}",
+        "fr": "{{msg.from}}",
+        "text": "{{msg.payload}}",
+        "unicode": false,
+        "x": 1250,
+        "y": 800,
+        "wires": [
+            [
+                "d5119c6f.f184a"
+            ]
+        ]
+    },
+    {
+        "id": "d5119c6f.f184a",
+        "type": "debug",
+        "z": "a95862c5.7cda3",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "x": 1390,
+        "y": 800,
+        "wires": []
+    },
+    {
+        "id": "d3e2e235.0be94",
+        "type": "split",
+        "z": "a95862c5.7cda3",
+        "name": "",
+        "splt": "\\n",
+        "spltType": "str",
+        "arraySplt": 1,
+        "arraySpltType": "len",
+        "stream": false,
+        "addname": "",
+        "x": 750,
+        "y": 800,
+        "wires": [
+            [
+                "ffa449f2.aec578"
+            ]
+        ]
+    },
+    {
+        "id": "ffa449f2.aec578",
+        "type": "delay",
+        "z": "a95862c5.7cda3",
+        "name": "",
+        "pauseType": "rate",
+        "timeout": "5",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "2",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "x": 900,
+        "y": 800,
+        "wires": [
+            [
+                "7d9010a4.2fcae"
+            ]
+        ]
+    },
+    {
+        "id": "7d9010a4.2fcae",
+        "type": "function",
+        "z": "a95862c5.7cda3",
+        "name": "Prepare SMS",
+        "func": "if (msg.payload.notify.name.length < 1) return null;\nif (msg.payload.notify.number.length < 1) return null;\nvar type = '';\nif (msg.payload.alarm == 1) type = 'LOW';\nif (msg.payload.alarm == 2) type = 'HIGH';\nif (msg.payload.alarm == 3) type = 'LOLO';\nif (msg.payload.alarm == 4) type = 'HIHI';\nvar message = 'Alarm-' + type + ': ' + msg.payload.id;\nmessage = message + ' is at ' + msg.payload.value.toString() + ' ' + msg.payload.unit\nreturn {topic:'sms',to:msg.payload.notify.number, payload:message, from:'46000000000'};\n",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 1080,
+        "y": 800,
+        "wires": [
+            [
+                "1c9cfcbb.699133",
+                "f899148b.b2d7d8"
+            ]
+        ]
+    },
+    {
+        "id": "e195d6c7.620748",
+        "type": "function",
+        "z": "a95862c5.7cda3",
+        "name": "CheckLogin",
+        "func": "if ('NULL' == global.get('settingsPassword'))\n    return [null, {topic:'getJwtToken',payload:msg.payload.userID, userID : msg.payload.userID}];\nif (msg.payload.payload.loginPassword != global.get('settingsPassword'))\n{\n    return [{topic:'getJwtToken', payload:{topic:'getJwtToken', userID:msg.payload.userID, token: null}}, null];\n}\nreturn [null, {topic:'getJwtToken',payload:msg.payload.userID, userID : msg.payload.userID}];",
+        "outputs": 2,
+        "noerr": 0,
+        "x": 610,
+        "y": 580,
+        "wires": [
+            [
+                "e738e9fa.ef2ad8"
+            ],
+            [
+                "e38406ff.1f9938"
+            ]
+        ]
+    },
+    {
+        "id": "e38406ff.1f9938",
+        "type": "JsonWebToken",
+        "z": "a95862c5.7cda3",
+        "name": "get Token",
+        "tokenconfig": "6acefdd9.69f124",
+        "x": 830,
+        "y": 600,
+        "wires": [
+            [
+                "f9d7d3f7.922e2"
+            ]
+        ]
+    },
+    {
+        "id": "f9d7d3f7.922e2",
+        "type": "function",
+        "z": "a95862c5.7cda3",
+        "name": "Send Token",
+        "func": "return {topic:'getJwtToken', payload:{topic:'getJwtToken', userID:msg.userID, token: msg.token}};\n",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 990,
+        "y": 600,
+        "wires": [
+            [
+                "e738e9fa.ef2ad8"
+            ]
+        ]
+    },
+    {
+        "id": "e738e9fa.ef2ad8",
+        "type": "link out",
+        "z": "a95862c5.7cda3",
+        "name": "Token Link",
+        "links": [
+            "72b97cc1.06abb4"
+        ],
+        "x": 1155,
+        "y": 560,
+        "wires": []
+    },
+    {
+        "id": "cc184ba6.22e578",
+        "type": "JsonWebToken",
+        "z": "a95862c5.7cda3",
+        "name": "decrypt Token",
+        "tokenconfig": "6acefdd9.69f124",
+        "x": 850,
+        "y": 520,
+        "wires": [
+            [
+                "6272ce93.428"
+            ]
+        ]
+    },
+    {
+        "id": "6272ce93.428",
+        "type": "function",
+        "z": "a95862c5.7cda3",
+        "name": "Check Token",
+        "func": "if (Number(msg.token) == msg.userID)\n{\n    return [msg, {topic : 'acknowledge', payload:{topic:'settingAcknowledge', payload: 'Success!', userID : msg.userID}}]\n}\nreturn [null, {topic : 'acknowledge', payload:{topic:'settingAcknowledge', payload: 'Bad token', userID : msg.userID}}];",
+        "outputs": 2,
+        "noerr": 0,
+        "x": 1030,
+        "y": 520,
+        "wires": [
+            [
+                "22b2cfd1.dc8ed",
+                "a89660a.b7851a"
+            ],
+            [
+                "e738e9fa.ef2ad8"
+            ]
+        ]
+    },
+    {
+        "id": "249f68ba.31af08",
+        "type": "function",
+        "z": "a95862c5.7cda3",
+        "name": "getNameList",
+        "func": "var newMsg = \n{\n    topic           : 'getNameList',\n    userID          : msg.payload.userID,\n    payload         : [{deviceType:msg.payload.deviceType},{projection:{name:1, _id:0}}],\n    deviceType      : msg.payload.deviceType,\n    trace           : msg.payload.trace\n};\nreturn newMsg;\n",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 610,
+        "y": 340,
+        "wires": [
+            [
+                "27184b0f.921d04"
+            ]
+        ]
+    },
+    {
+        "id": "71ceb893.dd0f08",
+        "type": "function",
+        "z": "a95862c5.7cda3",
+        "name": "parse name list",
+        "func": "function objectLength( object ) {\n    var length = 0;\n    for( var key in object ) {\n        if( object.hasOwnProperty(key) ) {\n            ++length;\n        }\n    }\n    return length;\n}\nvar numNames = objectLength(msg.payload);\nvar nameList = [];\n\nfor (var iname = 0; iname < numNames; ++iname)\n{\n    nameList[iname] = msg.payload[iname].name;\n}\nreturn {\n    topic:'getNameList',\n    payload:{\n        topic           : 'getNameList',\n        nameList        : nameList,\n        userID          : msg.userID,\n        deviceType      : msg.deviceType,\n        trace           : msg.trace,\n    }\n};\n\n",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 1240,
+        "y": 340,
+        "wires": [
+            [
+                "b3c6d83.10eff28"
+            ]
+        ]
+    },
+    {
+        "id": "adbf83f2.2f335",
+        "type": "template",
+        "z": "a95862c5.7cda3",
+        "name": "javascript.specialscalar",
+        "field": "payload.javascript.specialscalar",
+        "fieldType": "msg",
+        "format": "javascript",
+        "syntax": "mustache",
+        "template": "        var editedTrace = -1;\n        \n        function onDocumentReadySpecial()\n        {\n            for (var itrace = 0; itrace < numTraces; ++itrace)\n            {\n                $('#editDeviceButton'+ itrace.toString()).hide();\n            }\n        }\n        function onWebSocketMessageSpecial(msg)\n        {\n            switch(msg.topic)\n            {\n                case 'getJwtToken':\n                    loadJwtToken(msg);\n                    break;\n                case 'settingAcknowledge':\n                    acknowledgeDialog('Acknowledge', 'Setting', msg.payload);\n                    break;\n                default:\n                // code block\n            }\n        }\n        $( function() \n        {\n            $( \"#editDeviceDialog\" ).dialog(\n                {\n//                    closeOnEscape: false,\n//                    open: function(event, ui) {$(\".ui-dialog-titlebar-close\", ui.dialog | ui).hide();},\n                    width:    500,\n                    autoOpen: false,\n                    buttons:\n                    [\n                        {\n                            text: \"Set\",\n                            click: function() {setDevice(); $( this ).dialog( \"close\" );},\n                            showText: false\n                        },\n                        {\n                            text: \"Cancel\",\n                            click: function() {$( this ).dialog( \"close\" ); permitGetDeviceValues = true;},\n                            showText: false\n                        }\n                    ]\n                });\n        } );\n        function editDevice(itrace)\n        {\n            permitGetDeviceValues = false;\n            editedTrace = itrace;\n            $( \"#editDeviceDialog\" ).dialog( \"option\", \"title\", \"Edit\");    \n            $( \"#editDeviceDialogAttribute\").html(devInfo[itrace].deviceType + '-'  + devInfo[itrace].name + '-'  + devInfo[itrace].prop + '-'  + devInfo[itrace].attr);\n            var attr = devInfo[itrace].device[devInfo[itrace].attr];\n            $( \"#attrValue\").val(attr.value);\n            $( \"#loloAlarm\").val(attr.alarm.limits.lolo);\n            $( \"#lowAlarm\").val(attr.alarm.limits.low);\n            $( \"#highAlarm\").val(attr.alarm.limits.high);\n            $( \"#hihiAlarm\").val(attr.alarm.limits.hihi);\n            $( \"#notifyName\").val(attr.alarm.notify.name);\n            $( \"#notifyNumber\").val(attr.alarm.notify.number);\n\n            $( \"#editDeviceDialog\" ).dialog( \"open\" );\n        }\n        function setDevice()\n        {\n            var attr = devInfo[editedTrace].device[devInfo[editedTrace].attr];\n            if (isNaN($('#attrValue').val()) \n                || isNaN($('#loloAlarm').val()) \n                || isNaN($('#lowAlarm').val()) \n                || isNaN($('#highAlarm').val()) \n                || isNaN($('#hihiAlarm').val()))\n            {\n                permitGetDeviceValues = true;\n                acknowledgeDialog('Error', 'Entry not a number!', attr.attr);\n                return;\n            }\n\n            attr.value = Number($( \"#attrValue\").val());\n            attr.alarm.limits.lolo = Number($( \"#loloAlarm\").val());\n            attr.alarm.limits.low = Number($( \"#lowAlarm\").val());\n            attr.alarm.limits.high = Number($( \"#highAlarm\").val());\n            attr.alarm.limits.hihi = Number($( \"#hihiAlarm\").val());\n            attr.alarm.notify.number =  $( \"#notifyNumber\").val();\n            attr.alarm.notify.name = $( \"#notifyName\").val();\n//            console.log(devInfo[editedTrace].device);\n            var mqttMessage = \n            {\n                topic   : projectName + '/' + devInfo[editedTrace].device.deviceType + '/' + devInfo[editedTrace].device.name + '/setting',\n                payload :  devInfo[editedTrace].device\n            };\n            checkLogin(sendSettingToMqtt, mqttMessage);\n            permitGetDeviceValues = true;\n        }\n        function loadDeviceValuesSpecial(data)\n        {\n        }\n        function clearAttrOptionListSpecial(itrace)\n        {\n            $('#editDeviceButton'+ itrace.toString()).hide();\n        }\n        function attrSelectedSpecial(itrace)\n        {\n            $('#editDeviceButton'+ itrace.toString()).show();\n        }\n\n",
+        "output": "str",
+        "x": 330,
+        "y": 160,
+        "wires": [
+            [
+                "400dfcbc.c27134"
+            ]
+        ]
+    },
+    {
+        "id": "f899148b.b2d7d8",
+        "type": "debug",
+        "z": "a95862c5.7cda3",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "x": 1270,
+        "y": 880,
+        "wires": []
+    },
+    {
+        "id": "d190a007.a4973",
+        "type": "subflow:df70f6f.9e4ed08",
+        "z": "a95862c5.7cda3",
+        "name": "",
+        "x": 580,
+        "y": 40,
+        "wires": [
+            [
+                "3461b8e4.df5368"
+            ]
+        ]
+    },
+    {
+        "id": "890c6b9d.5e39c8",
+        "type": "subflow:df70f6f.9e4ed08",
+        "z": "a95862c5.7cda3",
+        "name": "",
+        "x": 580,
+        "y": 100,
+        "wires": [
+            [
+                "84360bd6.f4be38"
+            ]
+        ]
+    },
+    {
+        "id": "400dfcbc.c27134",
+        "type": "subflow:df70f6f.9e4ed08",
+        "z": "a95862c5.7cda3",
+        "name": "",
+        "x": 580,
+        "y": 160,
+        "wires": [
+            [
+                "c7806a14.8da438"
+            ]
+        ]
+    },
+    {
+        "id": "bfb7c068.01b0d",
+        "type": "subflow:f22a539a.a67b3",
+        "z": "a95862c5.7cda3",
+        "name": "",
+        "x": 1050,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "5eb7a557.b02d6c",
+        "type": "subflow:f22a539a.a67b3",
+        "z": "a95862c5.7cda3",
+        "name": "",
+        "x": 1050,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "e8924e13.3c251",
+        "type": "subflow:f22a539a.a67b3",
+        "z": "a95862c5.7cda3",
+        "name": "",
+        "x": 1050,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "a89660a.b7851a",
+        "type": "subflow:e13648d6.d698c8",
+        "z": "a95862c5.7cda3",
+        "name": "",
+        "x": 1290,
+        "y": 560,
+        "wires": []
+    },
+    {
+        "id": "48d46f36.82a4b",
+        "type": "websocket in",
+        "z": "f4668d01.5ec91",
+        "name": "vectorPlotter",
+        "server": "10ddafc3.5a804",
+        "client": "",
+        "x": 110,
+        "y": 300,
+        "wires": [
+            [
+                "5aa88ae9.c02ed4"
+            ]
+        ]
+    },
+    {
+        "id": "95e8a8db.b56d58",
+        "type": "websocket out",
+        "z": "f4668d01.5ec91",
+        "name": "vectorPlotter",
+        "server": "10ddafc3.5a804",
+        "client": "",
+        "x": 1530,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "86bc7eb7.7af34",
+        "type": "http in",
+        "z": "f4668d01.5ec91",
+        "name": "/vectorPlotter",
+        "url": "/vectorPlotter",
+        "method": "get",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 110,
+        "y": 40,
+        "wires": [
+            [
+                "49c34889.ec07b8"
+            ]
+        ]
+    },
+    {
+        "id": "8be5d531.d62fc8",
+        "type": "template",
+        "z": "f4668d01.5ec91",
+        "name": "Body",
+        "field": "payload.body",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "    <div width=\"100%\">\n        <table width=\"100%\">\n            <tr>\n                <td width=\"33%\" align=\"center\"><span class=\"tableHeading \">Device</span></td>\n                <td width=\"33%\" align=\"center\"><span class=\"tableHeading \">Name</span></td>\n                <td width=\"33%\" align=\"center\"><span class=\"tableHeading \">Attr</span></td>\n            </tr>\n            <tr>\n                <td>\n                    <select class=\"custom-select \" id=\"deviceSelect0\" onchange=\"deviceSelected(0)\">\n                        <option value='notSelected'></option>\n                    </select>\n                </td>\n                <td>\n                    <select class=\"custom-select \" id=\"nameSelect0\" onchange=\"nameSelected(0)\">\n                        <option value='notSelected'></option>\n                    </select>\n                </td>\n                <td>\n                    <select class=\"custom-select \" id=\"attrSelect0\" onchange=\"attrSelected(0)\">\n                        <option value='notSelected'></option>\n                    </select>\n                </td>\n            </tr>\n        </table>\n    </div>\n    <div class='vert-pad' width=\"100%\">\n        <div class='row'>\n            <div class='col-md-12'>\n                <div class='card'>\n                    <p class='card-title'>Spectrogram</p>\n                    <div class='card-body' align=\"center\">\n                        <div width=\"100%\" id=\"spectrogram\" align=\"center\"></div> \n                    </div>\n                </div>\n            </div>\n        </div>\n    </div>\n    <div width=\"100%\">\n        <div class=\"row\"> \n            <div class=\"col-md-6\" align=\"center\" style=\"padding-top:10px;padding-bottom:10px;\">\n                <button class=\"btn jumbotron-button btn-block\" id=\"freezeButton\" type=\"button\" onclick=\"freezeRun()\"></button>\n            </div>\n            <div class=\"col-md-6\" align=\"center\" style=\"padding-top:10px;padding-bottom:10px;\">\n                <button class=\"btn jumbotron-button btn-block\" id=\"birdsEyeButton\" type=\"button\" onclick=\"birdsEyeView()\">Birds Eye</button>\n            </div>\n        </div>\n        <div class=\"row\"> \n            <div class=\"col-md-6\" align=\"center\" style=\"padding-top:10px;padding-bottom:10px;\">\n                <button class=\"btn jumbotron-button btn-block\" id=\"sliceViewButton\" type=\"button\" onclick=\"sliceView()\">Slice View</button>\n            </div>\n            <div class=\"col-md-6\" align=\"center\" style=\"padding-top:10px;padding-bottom:10px;\">\n                <button class=\"btn jumbotron-button btn-block\" id=\"sliceViewButton\" type=\"button\" onclick=\"topView()\">Top View</button>\n            </div>\n        </div>\n        <div class=\"row\"> \n            <div class=\"col-md-6\" align=\"right\" >\n                <span class=\"tableHeading\" style=\"font-size: medium;\">Start Time</span>\n            </div>\n            <div class=\"col-md-6\">\n                <span class=\"tableHeading\"  style=\"font-size: medium;\" id=\"startTime\"></span>\n            </div>\n        </div>\n        <div class=\"row\"> \n            <div class=\"col-md-6\"  align=\"right\">\n                <span class=\"tableHeading\" style=\"font-size: medium;\">Stop Time</span>\n            </div>\n            <div class=\"col-md-6\">\n                <span class=\"tableHeading\" id=\"stopTime\" style=\"font-size: medium;\"></span>\n            </div>\n        </div>\n        <div class=\"row\"> \n            <div class=\"col-md-3\" align=\"right\" >\n                <span class=\"tableHeading\" style=\"font-size: medium;\">PlotSlices</span>\n            </div>\n            <div class=\"col-md-6\">\n                <input class=\"form-control center-justify\" id=\"plotslices\" type=\"text\" value=\"0\" style=\"font-size: medium;\"/>\n            </div>\n        </div>\n    </div>\n    ",
+        "output": "str",
+        "x": 550,
+        "y": 40,
+        "wires": [
+            [
+                "d37cafdc.419ea"
+            ]
+        ]
+    },
+    {
+        "id": "49c34889.ec07b8",
+        "type": "template",
+        "z": "f4668d01.5ec91",
+        "name": "javascript",
+        "field": "payload.javascript",
+        "fieldType": "msg",
+        "format": "javascript",
+        "syntax": "mustache",
+        "template": "        var numTraces = 1;\n        var deviceSelect = [];\n        var nameSelect = [];\n        var attrSelect=[];\n        var valSelect=[];\n        var devInfo = [];\n\n        var graph3d = null;\n        var itimeSlice = 0;\n        var timeMax = 32;\n        var dataArray = [];\n        var timeStamp = [];\n        var deltaT = 0;\n        var freeze = false;\n        var sliceViewActive = false;\n        var birdsEyeViewActive = false;\n        var topViewActive = false;\n        var birdsEyeTimeMax = 32;\n        var plotStarted = false;\n        \n        var threedPlotOptions =\n        {\n            width: '850px',\n            height: '600px',\n            style: 'surface',\n            showPerspective: false,\n            showGrid: true,\n            showShadow: false,\n            keepAspectRatio: false,\n            verticalRatio: 0.6,\n            showZAxis: true,\n            xLabel: 'x',\n            yLabel: 'Time',\n            tooltip: true,\n            axisColor: '#ffffff',\n        };\n\n        useWebSockets(true);\n        function onDocumentReady()\n        {\n            for (var itrace = 0; itrace < numTraces; ++itrace)\n            {\n                deviceSelect[itrace] = document.getElementById('deviceSelect' + itrace.toString());\n                nameSelect[itrace] = document.getElementById('nameSelect' + itrace.toString());\n                attrSelect[itrace] = document.getElementById('attrSelect' + itrace.toString());\n                valSelect[itrace] = document.getElementById('valSelect' + itrace.toString());\n                devInfo[itrace] = {deviceType: '', name : '',  prop : 'reading', attr : '',device : {}};\n            }\n            $(\"#freezeButton\").text('Running');\n            $(\"#plotslices\").val(timeMax.toString());\n            $(\"#plotslices\").change(function()\n            {\n                timeMax = Number($(\"#plotslices\").val());\n                if (timeMax < 2)\n                {\n                    alert('Number of plot slices must be greater than 1');\n                    timeMax = 2;\n                }\n                birdsEyeTimeMax = timeMax;\n                $(\"#plotslices\").val(timeMax.toString());\n                dataArray = [];\n                itimeSlice = 0;\n                plotStarted = false;\n            });\n            sliceViewActive = true;\n            birdsEyeViewActive = false;\n            topViewActive = false;\n            setInterval(getDeviceValues, 1000);\n        }\n        function restartPlot()\n        {\n            $(\"#freezeButton\").text('Running');\n            $(\"#plotslices\").val(timeMax.toString());\n            dataArray = [];\n            itimeSlice = 0;\n            plotStarted = false;\n            sliceViewActive = true;\n            birdsEyeViewActive = false;\n            topViewActive = false;\n        }\n        function onWebSocketMessage(msg)\n        {\n            if (msg.userID == userID)\n            {\n                switch(msg.topic)\n                {\n                    case 'getDeviceList':\n                        loadDeviceList(msg.payload);\n                        break;\n                    case 'getNameList':\n                        loadNameList(msg);\n                        break;\n                    case 'getAttrList':\n                        loadAttrList(msg);\n                        break;\n                    case 'getDeviceValues':\n                        loadDeviceValues(msg);\n                        break;\n                    default:\n                       break;\n                }\n            }\n         }\n        function onWebSocketOpen()\n        {\n            sendWebSocketMessageObject({topic : 'getDeviceList',payload : {}, 'userID' : userID,});\n        }\n        function onWebSocketClose()\n        {\n            \n        }\n        function loadDeviceList(deviceList)\n        {\n            deviceList.sort();\n            for (var itrace = 0; itrace < numTraces; ++itrace)\n            {\n                for (var ii = 0; ii < deviceList.length; ++ii)\n                {\n                    var opt = document.createElement('option');\n                    opt.value = deviceList[ii];\n                    opt.innerHTML = deviceList[ii];\n                    deviceSelect[itrace].appendChild(opt);\n                }\n            }\n        }\n        function loadNameList(data)\n        {\n            data.nameList.sort();\n            for (var ii = 0; ii < data.nameList.length; ++ii)\n            {\n                var opt = document.createElement('option');\n                opt.value = data.nameList[ii];\n                opt.innerHTML = data.nameList[ii];\n                nameSelect[data.trace].appendChild(opt);\n            }\n\n            return;\n        }\n        function loadAttrList(data)\n        {\n            data.attrList.sort();\n            for (var ii = 0; ii < data.attrList.length; ++ii)\n            {\n                var opt = document.createElement('option');\n                opt.value = data.attrList[ii];\n                opt.innerHTML = data.attrList[ii];\n                attrSelect[data.trace].appendChild(opt);\n            }\n        }\n        function deviceSelected(itrace)\n        {\n            clearNameOptionList(itrace);\n            if (deviceSelect[itrace].value == 'notSelected') return;\n            nameSelect[itrace].value = 'notSelected';\n            sendWebSocketMessageObject(\n                {\n                    topic       : 'getNameList',\n                    userID      : userID,\n                    trace       : itrace,\n                    deviceType  : deviceSelect[itrace].value,\n                });\n        }\n        function nameSelected(itrace)\n        {\n            clearAttrOptionList(itrace);\n            if (nameSelect[itrace].value == 'notSelected') return;\n            sendWebSocketMessageObject(\n                {\n                    topic       : 'getAttrList',\n                    userID      : userID,\n                    trace       : itrace,\n                    deviceType  : deviceSelect[itrace].value,\n                    name        : nameSelect[itrace].value,\n                    prop        : 'reading'\n                });\n        }\n        function attrSelected(itrace)\n        {\n            devInfo[itrace].deviceType = '';\n            devInfo[itrace].name = '';\n            devInfo[itrace].attr = '';\n            devInfo[itrace].device = {};\n            restartPlot();\n            if (attrSelect[itrace].value == 'notSelected')  return;\n            devInfo[itrace].deviceType = deviceSelect[itrace].value;\n            devInfo[itrace].name = nameSelect[itrace].value;\n            devInfo[itrace].attr = attrSelect[itrace].value;\n\n        }\n        function clearNameOptionList(itrace)\n        {\n            devInfo[itrace].deviceType = '';\n            devInfo[itrace].name = '';\n            devInfo[itrace].attr = '';\n            devInfo[itrace].device = {};\n\n            while (nameSelect[itrace].firstChild)\n            {\n                nameSelect[itrace].removeChild(nameSelect[itrace].firstChild);\n            }\n            var opt = document.createElement('option');\n            opt.value = 'notSelected';\n            opt.innerHTML = '';\n            nameSelect[itrace].appendChild(opt);\n            clearAttrOptionList(itrace);\n        }\n        function clearAttrOptionList(itrace)\n        {\n            devInfo[itrace].deviceType = '';\n            devInfo[itrace].name = '';\n            devInfo[itrace].attr = '';\n            devInfo[itrace].device = {};\n\n            while (attrSelect[itrace].firstChild)\n            {\n                attrSelect[itrace].removeChild(attrSelect[itrace].firstChild);\n            }\n            var opt = document.createElement('option');\n            opt.value = 'notSelected';\n            opt.innerHTML = '';\n            attrSelect[itrace].appendChild(opt);\n            \n        }\n        function getDeviceValues()\n        {\n            var devList = [];\n            var traceCount = 0;\n            for (var itrace = 0; itrace < numTraces; ++itrace)\n            {\n                if ((devInfo[itrace].deviceType.length > 0) && (devInfo[itrace].name.length > 0)) \n                {\n                    devList[traceCount] = { $and: [ {deviceType : devInfo[itrace].deviceType}, {name : devInfo[itrace].name}]};\n                    ++traceCount;\n                }\n            }\n            if (traceCount < 1) return;\n            var queryFilter = { $or: devList };\n            sendWebSocketMessageObject(\n                {\n                    topic       : 'getDeviceValues',\n                    userID      : userID,\n                    queryFilter : queryFilter,\n                });\n \n        }\n        function loadDeviceValues(data)\n        {\n            var devices = data.devices;\n            for (var itrace = 0; itrace < numTraces; ++itrace)\n            {\n                if (devInfo[itrace].attr.length > 0)\n                {\n                    for (idev = 0; idev < devices.length; ++idev)\n                    {\n                        if (devices[idev].deviceType == devInfo[itrace].deviceType)\n                        {\n                            if(devices[idev].name == devInfo[itrace].name)\n                            {\n                                devInfo[itrace].device = devices[idev];\n                                var attr = devInfo[itrace].device[devInfo[itrace].attr];\n                                upDatePlot(attr.value);\n                            }\n                        }\n                    } \n                }\n            }\n        }\n        function upDatePlot(value)\n        {\n            var npts = value[0].length;\n            if(!plotStarted)\n            {\n                dataArray = [];\n                for (var ix = 0; ix < npts; ++ix)\n                {\n                    dataArray[ix] =\n                    {\n                        'x': value[0][ix],\n                        'y': 0,\n                        'z': value[1][ix],\n                        'style': value[1][ix]\n                    };\n                }\n                var container = document.getElementById('spectrogram');\n            \n                graph3d = new vis.Graph3d(container, dataArray, threedPlotOptions);\n                $(\"#startTime\").text(new Date().toLocaleString());\n                $(\"#stopTime\").text(new Date().toLocaleString());\n                graph3d.on('cameraPositionChange', onCameraPositionChange);\n                if (sliceViewActive) sliceView();\n                if (birdsEyeViewActive) birdsEyeView();\n                if (topViewActive) topView();\n                plotStarted = true;\n            }\n            else\n            {\n                if (freeze) return;\n                if (itimeSlice < timeMax)\n                {\n                    timeStamp[itimeSlice] = new Date().getTime();\n                    deltaT = (timeStamp[itimeSlice] - timeStamp[0]) / 1000;\n                    for (var ix = 0; ix < npts; ++ix)\n                    {\n                        dataArray[itimeSlice * npts + ix] =\n                        {\n                            'x': value[0][ix],\n                            'y': deltaT,\n                            'z': value[1][ix],\n                            'style': value[1][ix]\n                        };\n                    }\n                    ++itimeSlice;\n                }\n                else\n                {\n                    for (var itime = 0; itime < (timeMax - 1); ++itime)\n                    {\n                        timeStamp[itime] = timeStamp[itime + 1];\n                        deltaT = (timeStamp[itime] - timeStamp[0]) / 1000;\n                        for (var ix = 0; ix < npts; ++ix)\n                        {\n                            dataArray[itime * npts + ix] =\n                            {\n                                'x': dataArray[(itime + 1) * npts + ix].x,\n                                'y': deltaT,\n                                'z': dataArray[(itime + 1) * npts + ix].z,\n                                'style': dataArray[(itime + 1) * npts + ix].style\n                            };\n                        }\n                    }\n                    timeStamp[timeMax - 1] = new Date().getTime();\n                    deltaT = (timeStamp[timeMax - 1] - timeStamp[0]) / 1000;\n                    for (var ix = 0; ix < npts; ++ix)\n                    {\n                        dataArray[(timeMax - 1) * npts + ix] =\n                        {\n                            'x': value[0][ix],\n                            'y': deltaT,\n                            'z': value[1][ix],\n                            'style': value[1][ix]\n                        };\n                    }\n                }\n                $(\"#startTime\").text(new Date(timeStamp[0]).toLocaleString());\n                $(\"#stopTime\").text(new Date(timeStamp[itimeSlice - 1]).toLocaleString());\n                graph3d.setData(dataArray);\n            }\n        }\n        function freezeRun()\n        {\n            freeze = !freeze;\n            if (freeze)\n            {\n                $(\"#freezeButton\").text('Frozen');\n            }\n            else\n            {\n                $(\"#freezeButton\").text('Running');\n            }\n        }\n        \n        function birdsEyeView()\n        {\n            var horzAngle = 315.0 * 3.1415927 / 180.0;\n            var vertAngle = 45.0 * 3.1415927 / 180.0;\n            graph3d.setCameraPosition({'horizontal': horzAngle, 'vertical': vertAngle, 'distance': 2.0});\n            if (sliceViewActive)\n            {\n                timeMax =  birdsEyeTimeMax;\n                $(\"#plotslices\").val(timeMax.toString());\n            }\n            sliceViewActive = false;\n            birdsEyeViewActive = true;\n            topViewActive = false;\n        }\n        function sliceView()\n        {\n            var horzAngle = 0.0 * 3.1415927 / 180.0;\n            var vertAngle = 0.0 * 3.1415927 / 180.0;\n            graph3d.setCameraPosition({'horizontal': horzAngle, 'vertical': vertAngle, 'distance': 1.1});\n            timeMax = 2;\n            $(\"#plotslices\").val(timeMax.toString());\n            itimeSlice = 0;\n            plotStarted = false;\n            sliceViewActive = true;\n            birdsEyeViewActive = false;\n            topViewActive = false;\n        }\n        function topView()\n        {\n            var horzAngle = 0 * 3.1415927 / 180.0;\n            var vertAngle = 90 * 3.1415927 / 180.0;\n            graph3d.setCameraPosition({'horizontal': horzAngle, 'vertical': vertAngle, 'distance': 2.0});\n            if (sliceViewActive)\n            {\n                timeMax =  birdsEyeTimeMax;\n                $(\"#plotslices\").val(timeMax.toString());\n            }\n            sliceViewActive = false;\n            birdsEyeViewActive = false;\n            topViewActive = true;\n        }\n        function onCameraPositionChange(event)\n        {\n            if (sliceViewActive) sliceView();\n            if (birdsEyeViewActive) birdsEyeView();\n            if (topViewActive) topView();\n        }",
+        "output": "str",
+        "x": 300,
+        "y": 40,
+        "wires": [
+            [
+                "96fbd4aa.235448"
+            ]
+        ]
+    },
+    {
+        "id": "96fbd4aa.235448",
+        "type": "template",
+        "z": "f4668d01.5ec91",
+        "name": "Title",
+        "field": "payload.title",
+        "fieldType": "msg",
+        "format": "html",
+        "syntax": "mustache",
+        "template": "Vector Plotter",
+        "output": "str",
+        "x": 430,
+        "y": 40,
+        "wires": [
+            [
+                "8be5d531.d62fc8"
+            ]
+        ]
+    },
+    {
+        "id": "5aa88ae9.c02ed4",
+        "type": "json",
+        "z": "f4668d01.5ec91",
+        "name": "",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 290,
+        "y": 340,
+        "wires": [
+            [
+                "d9c27077.8f908"
+            ]
+        ]
+    },
+    {
+        "id": "d9c27077.8f908",
+        "type": "switch",
+        "z": "f4668d01.5ec91",
+        "name": "",
+        "property": "payload.topic",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "getDeviceList",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "getNameList",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "getAttrList",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "getDeviceValues",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "getArchiveValues",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 5,
+        "x": 410,
+        "y": 340,
+        "wires": [
+            [
+                "c688f08b.fe0e3"
+            ],
+            [
+                "4e3518a7.4723f8"
+            ],
+            [
+                "dfaa2981.e1a3a8"
+            ],
+            [
+                "784556c3.56c178"
+            ],
+            [
+                "4f222538.326f2c"
+            ]
+        ]
+    },
+    {
+        "id": "c688f08b.fe0e3",
+        "type": "function",
+        "z": "f4668d01.5ec91",
+        "name": "getDeviceList",
+        "func": "var newMsg = \n{\n    topic           : 'getDeviceList',\n    userID          : msg.payload.userID,\n    payload         : [{},{projection:{deviceType:1, _id:0}}]\n};\nreturn newMsg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 580,
+        "y": 260,
+        "wires": [
+            [
+                "c4fc958.357c268"
+            ]
+        ]
+    },
+    {
+        "id": "dfaa2981.e1a3a8",
+        "type": "function",
+        "z": "f4668d01.5ec91",
+        "name": "getAttrList",
+        "func": "var projectionFilter =  {projection:{_id:0}};\nvar newMsg = \n{\n    topic           : 'getAttrList',\n    userID          : msg.payload.userID,\n    payload         : [{$and : [{deviceType:msg.payload.deviceType}, {name:msg.payload.name}]}, projectionFilter],\n    prop            : msg.payload.prop,\n    name            : msg.payload.name,\n    deviceType      : msg.payload.deviceType,\n    trace           : msg.payload.trace\n};\nreturn newMsg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 560,
+        "y": 340,
+        "wires": [
+            [
+                "c4fc958.357c268"
+            ]
+        ]
+    },
+    {
+        "id": "784556c3.56c178",
+        "type": "function",
+        "z": "f4668d01.5ec91",
+        "name": "getDeviceValues",
+        "func": "var projectionFilter =  {projection:{_id:0}};\nvar newMsg = \n{\n    topic           : 'getDeviceValues',\n    userID          : msg.payload.userID,\n    payload         : [msg.payload.queryFilter, projectionFilter],\n};\nreturn newMsg;\n",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 590,
+        "y": 380,
+        "wires": [
+            [
+                "c4fc958.357c268"
+            ]
+        ]
+    },
+    {
+        "id": "c4fc958.357c268",
+        "type": "mongodb3 in",
+        "z": "f4668d01.5ec91",
+        "service": "_ext_",
+        "configNode": "9cd5ff5e.caf86",
+        "name": "",
+        "collection": "devices",
+        "operation": "find.toArray",
+        "x": 870,
+        "y": 300,
+        "wires": [
+            [
+                "18a69eda.3fcff1"
+            ]
+        ]
+    },
+    {
+        "id": "18a69eda.3fcff1",
+        "type": "switch",
+        "z": "f4668d01.5ec91",
+        "name": "",
+        "property": "topic",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "getDeviceList",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "getNameList",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "getAttrList",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "getDeviceValues",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 4,
+        "x": 1070,
+        "y": 300,
+        "wires": [
+            [
+                "cf40afb7.84a3e"
+            ],
+            [
+                "41b4e3a3.fb29cc"
+            ],
+            [
+                "2598ade5.d855e2"
+            ],
+            [
+                "f17a2a37.533fd8"
+            ]
+        ]
+    },
+    {
+        "id": "cf40afb7.84a3e",
+        "type": "function",
+        "z": "f4668d01.5ec91",
+        "name": "parse device list",
+        "func": "function objectLength( object ) {\n    var length = 0;\n    for( var key in object ) {\n        if( object.hasOwnProperty(key) ) {\n            ++length;\n        }\n    }\n    return length;\n}\nvar numDevices = objectLength(msg.payload);\nvar deviceList = [];\ndeviceList[0] = msg.payload[0].deviceType;\nif (numDevices > 1)\n{\n    for (var idevice = 1; idevice < numDevices; ++idevice)\n    {\n        var deviceAlreadyFound = false;\n        for (ii = 0; ii < idevice; ++ii)\n        {\n            if (msg.payload[idevice].deviceType == deviceList[ii]) deviceAlreadyFound = true;\n        }\n        if (!deviceAlreadyFound) deviceList[idevice] = msg.payload[idevice].deviceType;\n    }\n}\n\nreturn {\n    topic:'getDeviceList',\n    payload:{\n        topic           : 'getDeviceList',\n        payload         : deviceList,\n        userID          : msg.userID,\n    }\n};\n",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 1280,
+        "y": 240,
+        "wires": [
+            [
+                "95e8a8db.b56d58",
+                "728329d3.8f17b8"
+            ]
+        ]
+    },
+    {
+        "id": "2598ade5.d855e2",
+        "type": "function",
+        "z": "f4668d01.5ec91",
+        "name": "parse attrList",
+        "func": "function objectLength( object ) {\n    var length = 0;\n    for( var key in object ) {\n        if( object.hasOwnProperty(key) ) {\n            ++length;\n        }\n    }\n    return length;\n}\nvar numDevices = objectLength(msg.payload);\nif (numDevices < 1) return null;\nvar device = msg.payload[0];\nvar attrList = [];\nvar keys = Object.keys(device);\nfor (var ii = 0; ii < keys.length; ++ii)\n{\n    if (device[keys[ii]].hasOwnProperty('type'))\n    {\n        if (device[keys[ii]].type == 'vector')\n        {\n            if (device[keys[ii]].action == msg.prop)\n            {\n                attrList.push(keys[ii]);\n            }\n        }\n    }\n}\nif (attrList.length < 1) return null;\nreturn {\n    topic:'getAttrList',\n    payload:{\n        topic           : 'getAttrList',\n        userID          : msg.userID,\n        prop            : msg.prop,\n        name            : msg.name,\n        trace           : msg.trace,\n        attrList        : attrList,\n        deviceType      : msg.deviceType,\n\n    }\n};\n\n",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 1270,
+        "y": 320,
+        "wires": [
+            [
+                "95e8a8db.b56d58",
+                "728329d3.8f17b8"
+            ]
+        ]
+    },
+    {
+        "id": "f17a2a37.533fd8",
+        "type": "function",
+        "z": "f4668d01.5ec91",
+        "name": "parse getDeviceValues",
+        "func": "function objectLength( object ) {\n    var length = 0;\n    for( var key in object ) {\n        if( object.hasOwnProperty(key) ) {\n            ++length;\n        }\n    }\n    return length;\n}\nvar numDevices = objectLength(msg.payload);\nif (numDevices < 1) return null;\nvar devices = [];\nfor (var idev = 0; idev < numDevices; ++idev) devices[idev] = msg.payload[idev];\nreturn {\n    topic:'getDeviceValues',\n    payload:{\n        topic           : 'getDeviceValues',\n        userID          : msg.userID,\n        devices         : devices,\n\n    }\n};\n",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 1300,
+        "y": 360,
+        "wires": [
+            [
+                "95e8a8db.b56d58",
+                "728329d3.8f17b8"
+            ]
+        ]
+    },
+    {
+        "id": "4f222538.326f2c",
+        "type": "function",
+        "z": "f4668d01.5ec91",
+        "name": "getArchiveValues",
+        "func": "var projectionFilter =  \n{\n    projection:\n    {\n        _id                         :   0, \n        deviceType                  :   1,  \n        name                        :   1,  \n        timeStamp                   :   1, \n        [msg.payload.device.attr]   :   1\n    } \n};\nvar queryFilter = \n{\n    $and :\n    [\n        {\n            deviceType: msg.payload.device.deviceType\n        },\n        {\n            name: msg.payload.device.name\n        },\n        {\n            timeStamp :\n            {\n                $gte: msg.payload.device.startDate,\n                $lte: msg.payload.device.stopDate\n            }\n        }\n    ] \n    \n}\nvar newMsg = \n{\n    topic           : 'getArchiveValues',\n    userID          : msg.payload.userID,\n    payload         : [queryFilter, projectionFilter],\n    device          : msg.payload.device,\n    maxPtsToPlot    : msg.payload.maxPtsToPlot,\n    itrace          : msg.payload.device.itrace\n};\nreturn newMsg;\n",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 590,
+        "y": 420,
+        "wires": [
+            [
+                "c256cef8.5ae6b"
+            ]
+        ]
+    },
+    {
+        "id": "c256cef8.5ae6b",
+        "type": "mongodb3 in",
+        "z": "f4668d01.5ec91",
+        "service": "_ext_",
+        "configNode": "9cd5ff5e.caf86",
+        "name": "",
+        "collection": "archiver",
+        "operation": "find.toArray",
+        "x": 870,
+        "y": 500,
+        "wires": [
+            [
+                "5cb933a4.3e848c"
+            ]
+        ]
+    },
+    {
+        "id": "5cb933a4.3e848c",
+        "type": "function",
+        "z": "f4668d01.5ec91",
+        "name": "Sort Archive Data",
+        "func": "function objectLength( object ) {\n    var length = 0;\n    for( var key in object ) {\n        if( object.hasOwnProperty(key) ) {\n            ++length;\n        }\n    }\n    return length;\n}\n\nfunction sortByKey(arr, key) \n{\n    return arr.sort( function(a, b) \n        {\n            var x = a[key]; \n            var y = b[key];\n            return ((x < y) ? -1 : ((x > y) ? 1 : 0));\n        } );\n}\n\nvar numRecords = objectLength(msg.payload);\nif (numRecords < 1)\n{\n    return {\n        topic:'getArchiveValues',\n        payload:{\n            topic           : 'getArchiveValues',\n            payload         : {itrace: msg.itrace, trace:null},\n            userID          : msg.userID,\n        }\n    };\n}\nvar records = [];\nfor (var ii = 0; ii < numRecords; ++ii) records[ii] = msg.payload[ii]; \nsortByKey(records, 'timeStamp');\nvar trace = [];\nvar maxPts = msg.maxPtsToPlot;\nvar nstep = numRecords / msg.maxPtsToPlot;\nif (nstep < 1.0) \n{\n    nstep = 1.0;\n    maxPts = numRecords;\n}\nvar icnt = 0;\n\nwhile(icnt < maxPts)\n{\n    var index = Math.round(icnt * nstep);\n    trace[icnt] = {timeStamp: records[index].timeStamp, value: records[index][msg.device.attr]};\n    ++icnt\n}\n\nreturn {\n    topic:'getArchiveValues',\n    payload:{\n        topic           : 'getArchiveValues',\n        payload         : {itrace: msg.itrace, trace:trace},\n        userID          : msg.userID,\n    }\n};\n",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 1230,
+        "y": 540,
+        "wires": [
+            [
+                "728329d3.8f17b8"
+            ]
+        ]
+    },
+    {
+        "id": "c7ba9ab2.e29678",
+        "type": "websocket in",
+        "z": "f4668d01.5ec91",
+        "name": "vectorArchivePlotter",
+        "server": "974dfae8.5606f8",
+        "client": "",
+        "x": 130,
+        "y": 380,
+        "wires": [
+            [
+                "5aa88ae9.c02ed4"
+            ]
+        ]
+    },
+    {
+        "id": "728329d3.8f17b8",
+        "type": "websocket out",
+        "z": "f4668d01.5ec91",
+        "name": "vectorArchivePlotter",
+        "server": "974dfae8.5606f8",
+        "client": "",
+        "x": 1600,
+        "y": 520,
+        "wires": []
+    },
+    {
+        "id": "1af39160.79fddf",
+        "type": "http in",
+        "z": "f4668d01.5ec91",
+        "name": "/vectorArchivePlotter",
+        "url": "/vectorArchivePlotter",
+        "method": "get",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 130,
+        "y": 140,
+        "wires": [
+            [
+                "33e5dd4d.aedc82"
+            ]
+        ]
+    },
+    {
+        "id": "33e5dd4d.aedc82",
+        "type": "template",
+        "z": "f4668d01.5ec91",
+        "name": "JavaScript",
+        "field": "payload.javascript",
+        "fieldType": "msg",
+        "format": "javascript",
+        "syntax": "mustache",
+        "template": "        var numTraces = 1;\n        var deviceSelect = [];\n        var nameSelect = [];\n        var attrSelect=[];\n        var devInfo = [];\n        \n        var startDate = 0;\n        var stopDate = 0;\n        var csvFile = [];\n\n        var archiveRequestList = [];\n        var archiveList = [];\n\n        useWebSockets(true);\n        function onDocumentReady()\n        {\n            for (var itrace = 0; itrace < numTraces; ++itrace)\n            {\n                deviceSelect[itrace] = document.getElementById('deviceSelect' + itrace.toString());\n                nameSelect[itrace] = document.getElementById('nameSelect' + itrace.toString());\n                attrSelect[itrace] = document.getElementById('attrSelect' + itrace.toString());\n                devInfo[itrace] = {deviceType  : '', name : '', prop : 'reading', attr : '',device : {}};\n\n                $('#csv'+ itrace.toString()).removeAttr(\"href\");\n                $('#csv'+ itrace.toString()).css('color', 'black');\n                $('#csv'+ itrace.toString()).css('text-decoration', 'none');\n                $('#csv'+ itrace.toString()).css('font-weight', 'bold');\n                csvFile[itrace] = null;\n\n            }\n            var now = new Date();\n            console.log(now.toLocaleString('en-US',{year: 'numeric', month: '2-digit', day : '2-digit', hour12:false, hour: '2-digit', minute: '2-digit'}).replace(',', ''));\n            var then = new Date(now.getTime() - 3600 * 24 * 1000);\n            $( \"#startDate\" ).val(then.toLocaleString('en-US',{year: 'numeric', month: '2-digit', day : '2-digit', hour12:false, hour: '2-digit', minute: '2-digit'}).replace(',', ''));\n            $( \"#stopDate\" ).val(now.toLocaleString('en-US',{year: 'numeric', month: '2-digit', day : '2-digit', hour12:false, hour: '2-digit', minute: '2-digit'}).replace(',', ''));\n            $( function()\n            {\n                $('#startDate').datetimepicker();\n            } );\n            $( function()\n            {\n                $('#stopDate').datetimepicker();\n            } );\n            $('#plotViewButtons').hide();\n        }\n        function onWebSocketOpen()\n        {\n            sendWebSocketMessageObject({topic : 'getDeviceList',payload : {}, 'userID' : userID,});\n        }\n        function onWebSocketClose()\n        {\n            \n        }\n        function onWebSocketMessage(msg)\n        {\n            if (msg.userID == userID)\n            {\n                switch(msg.topic)\n                {\n                    case 'getDeviceList':\n                        loadDeviceList(msg.payload);\n                        break;\n                    case 'getNameList':\n                        loadNameList(msg);\n                        break;\n                    case 'getAttrList':\n                        loadAttrList(msg);\n                        break;\n                    case 'getArchiveValues':\n                        archiveList.push(msg.payload);\n                        if (archiveRequestList.length > 0)\n                        {\n                            getArchiveValues();\n                        }\n                        else\n                        {\n                            plotArchive();\n                        }\n                        break;\n                    default:\n                    // code block\n                }\n            }\n        }\n        function loadDeviceList(deviceList)\n        {\n            deviceList.sort();\n            for (var itrace = 0; itrace < numTraces; ++itrace)\n            {\n                for (var ii = 0; ii < deviceList.length; ++ii)\n                {\n                    var opt = document.createElement('option');\n                    opt.value = deviceList[ii];\n                    opt.innerHTML = deviceList[ii];\n                    deviceSelect[itrace].appendChild(opt);\n                }\n            }\n        }\n        function loadNameList(data)\n        {\n            data.nameList.sort();\n            for (var ii = 0; ii < data.nameList.length; ++ii)\n            {\n                var opt = document.createElement('option');\n                opt.value = data.nameList[ii];\n                opt.innerHTML = data.nameList[ii];\n                nameSelect[data.trace].appendChild(opt);\n            }\n\n            return;\n        }\n        function loadAttrList(data)\n        {\n            data.attrList.sort();\n            for (var ii = 0; ii < data.attrList.length; ++ii)\n            {\n                var opt = document.createElement('option');\n                opt.value = data.attrList[ii];\n                opt.innerHTML = data.attrList[ii];\n                attrSelect[data.trace].appendChild(opt);\n            }\n        }\n        function deviceSelected(itrace)\n        {\n            clearNameOptionList(itrace);\n            if (deviceSelect[itrace].value == 'notSelected') return;\n            nameSelect[itrace].value = 'notSelected';\n            sendWebSocketMessageObject(\n                {\n                    topic       : 'getNameList',\n                    userID      : userID,\n                    trace       : itrace,\n                    deviceType  : deviceSelect[itrace].value,\n                });\n        }\n        function nameSelected(itrace)\n        {\n            clearAttrOptionList(itrace);\n            if (nameSelect[itrace].value == 'notSelected') return;\n            sendWebSocketMessageObject(\n                {\n                    topic       : 'getAttrList',\n                    userID      : userID,\n                    trace       : itrace,\n                    deviceType  : deviceSelect[itrace].value,\n                    name        : nameSelect[itrace].value,\n                    prop        : 'reading'\n                });\n        }\n        function attrSelected(itrace)\n        {\n            devInfo[itrace].deviceType = '';\n            devInfo[itrace].name = '';\n            devInfo[itrace].attr = '';\n            devInfo[itrace].device = {};\n            if (attrSelect[itrace].value == 'notSelected')  return;\n            devInfo[itrace].deviceType = deviceSelect[itrace].value;\n            devInfo[itrace].name = nameSelect[itrace].value;\n            devInfo[itrace].attr = attrSelect[itrace].value;\n\n        }\n        function clearNameOptionList(itrace)\n        {\n            devInfo[itrace].deviceType = '';\n            devInfo[itrace].name = '';\n            devInfo[itrace].attr = '';\n            devInfo[itrace].device = {};\n\n            while (nameSelect[itrace].firstChild)\n            {\n                nameSelect[itrace].removeChild(nameSelect[itrace].firstChild);\n            }\n            var opt = document.createElement('option');\n            opt.value = 'notSelected';\n            opt.innerHTML = '';\n            nameSelect[itrace].appendChild(opt);\n            clearAttrOptionList(itrace);\n        }\n        function clearAttrOptionList(itrace)\n        {\n            devInfo[itrace].deviceType = '';\n            devInfo[itrace].name = '';\n            devInfo[itrace].attr = '';\n            devInfo[itrace].device = {};\n\n            while (attrSelect[itrace].firstChild)\n            {\n                attrSelect[itrace].removeChild(attrSelect[itrace].firstChild);\n            }\n            var opt = document.createElement('option');\n            opt.value = 'notSelected';\n            opt.innerHTML = '';\n            attrSelect[itrace].appendChild(opt);\n            \n        }\n        function getArchiveData()\n        {\n\n            archiveRequestList = [];\n            archiveList = [];\n            startDate = new Date($( \"#startDate\" ).val()).getTime();\n            stopDate = new Date($( \"#stopDate\" ).val()).getTime();\n            var traceCount = 0;\n            for (var itrace = 0; itrace < numTraces; ++itrace)\n            {\n                if (devInfo[itrace].attr.length > 0) \n                {\n                    archiveRequestList[traceCount] = \n                    {\n                        deviceType  : devInfo[itrace].deviceType, \n                        name        : devInfo[itrace].name, \n                        prop        : devInfo[itrace].prop, \n                        attr        : devInfo[itrace].attr,\n                        startDate: startDate, \n                        stopDate: stopDate,\n                        itrace  :   itrace\n                    };\n                    ++traceCount;\n                }\n            }\n            if (traceCount < 1) return;\n            $('#plotSetupTable').hide();\n            $('#timePlotCard').hide();\n            for (var itrace = 0; itrace < numTraces; ++itrace)\n            {\n                $('#csv'+ itrace.toString()).removeAttr(\"href\");\n                $('#csv'+ itrace.toString()).css('color', 'black');\n                $('#csv'+ itrace.toString()).css('text-decoration', 'none');\n                $('#csv'+ itrace.toString()).css('font-weight', 'bold');\n            }\n            messageDialog('Alert', 'Wait!', 'Requesting data ...');\n            getArchiveValues();\n        }\n        function getArchiveValues()\n        {\n            var maxPtsToPlot = Number($( \"#maxPtsToPlot\" ).val());\n            sendWebSocketMessageObject(\n                {\n                    topic       : 'getArchiveValues',\n                    userID      : userID,\n                    device      : archiveRequestList[0],\n                    maxPtsToPlot: maxPtsToPlot\n                });\n            archiveRequestList.shift();\n            return;\n        }\n        function plotArchive()\n        {\n            $( \"#messageDialog\" ).dialog('close');\n            $('#plotSetupTable').show();\n            \n            $('#plotViewButtons').show();\n            $('#timePlot').show();\n            makeCsvFile();\n            var npts = archiveList[0].trace.length;\n            var oodataArray = [];\n            \n            var nxMax = archiveList[0].trace[0].value[0].length;\n            for (var ii = 0; ii < npts; ++ii)\n            {\n                var yvalue = Math.round((archiveList[0].trace[ii].timeStamp - archiveList[0].trace[0].timeStamp)/3600) / 1000;\n                for (var ix = 0; ix < nxMax; ++ix)\n                {\n                    var zvalue = archiveList[0].trace[ii].value[1][ix];\n                    oodataArray[ii * nxMax + ix] =\n                    {\n                        'x': archiveList[0].trace[ii].value[0][ix],\n                        'y': yvalue,\n                        'z': zvalue,\n                        'style': zvalue\n                    };\n                }\n            }\n            var options = \n            {\n                width:  '100%',\n                height: '800px',\n                style: 'surface',\n                showPerspective: false,\n                showGrid: true,\n                showShadow: false,\n                keepAspectRatio: false,\n                verticalRatio: 1.0,\n                showZAxis: true,\n                yCenter: '50%',\n                xLabel: 'x',\n                yLabel: 'Time (hr)',\n                zLabel: 'y',\n                tooltip: true,\n                axisColor: '#000000'\n            };\n        \n            // create a graph3d\n            var container = document.getElementById('timePlot');\n        \n            graph3d = new vis.Graph3d(container, oodataArray, options);\n            var horzAngle = 0 * 3.1415927 / 180.0;\n            var vertAngle = 90 * 3.1415927 / 180.0;\n            graph3d.setCameraPosition({'horizontal': horzAngle, 'vertical': vertAngle, 'distance': 2.0});\n        }\n        function changePlotView(horzAngleDeg, vertAngleDeg)\n        {\n            var horzAngle = horzAngleDeg * 3.1415927 / 180.0;\n            var vertAngle = vertAngleDeg * 3.1415927 / 180.0;\n            graph3d.setCameraPosition({'horizontal': horzAngle, 'vertical': vertAngle, 'distance': 2.0});\n        }\n        function makeCsvFile ()\n        {\n            var itrace = 0;\n            var dataString = '';\n            var startT = archiveList[0].trace[0].timeStamp;\n        \n            dataString = dataString + 'Device,' + devInfo[0].deviceType + ',' + devInfo[0].name + ',' + devInfo[0].prop + ',' + devInfo[0].attr  +'\\n';\n            dataString = dataString + 'StartDate,' + new Date(startT).toLocaleString('en-US',{year: 'numeric', month: '2-digit', day : '2-digit', hour12:false, hour: '2-digit', minute: '2-digit'}) + '\\n';\n            dataString = dataString + 'StartDate (mS),' + startT.toString() + '\\n';\n            dataString = dataString + 'Time (sec),  \\n 0,x';\n            for (var ipt = 0; ipt < archiveList[0].trace[0].value[0].length; ++ipt) dataString = dataString + ',' + archiveList[0].trace[0].value[0][ipt];\n            dataString = dataString + '\\n';\n\n            for (var ii = 0; ii < archiveList[0].trace.length; ++ii)\n            {\n\n                var x = (archiveList[0].trace[ii].timeStamp - startT) / 1000;\n                dataString = dataString + x.toString() + ',y';\n                for (var ipt = 0; ipt < archiveList[0].trace[ii].value[1].length; ++ipt) dataString = dataString + ',' + archiveList[0].trace[ii].value[1][ipt];\n                dataString = dataString + '\\n';\n            }\n            var data = new Blob([dataString], {type: 'text/plain'});\n        \n            // If we are replacing a previously generated file we need to\n            // manually revoke the object URL to avoid memory leaks.\n            if (csvFile[itrace] !== null) {\n              window.URL.revokeObjectURL(csvFile[itrace]);\n            }\n        \n            csvFile[itrace] = window.URL.createObjectURL(data);\n            // returns a URL you can use as a href\n            $('#csv'+ itrace.toString()).css('color', 'blue');\n            $('#csv'+ itrace.toString()).css('text-decoration', 'underline');\n            $('#csv'+ itrace.toString()).css('font-weight', 'bold');\n            $('#csv'+ itrace.toString()).attr(\"href\", csvFile[itrace]);\n            $('#csv'+ itrace.toString()).attr(\"download\", devInfo[itrace].deviceType + '-' + devInfo[itrace].name + '-' + devInfo[itrace].prop + '-' + devInfo[itrace].attr + '.csv');\n        \n        }\n",
+        "output": "str",
+        "x": 310,
+        "y": 140,
+        "wires": [
+            [
+                "c3606700.01a3f8"
+            ]
+        ]
+    },
+    {
+        "id": "c3606700.01a3f8",
+        "type": "template",
+        "z": "f4668d01.5ec91",
+        "name": "Title",
+        "field": "payload.title",
+        "fieldType": "msg",
+        "format": "html",
+        "syntax": "mustache",
+        "template": "Vector Archive Plotter",
+        "output": "str",
+        "x": 450,
+        "y": 140,
+        "wires": [
+            [
+                "de1fdc5d.561f5"
+            ]
+        ]
+    },
+    {
+        "id": "de1fdc5d.561f5",
+        "type": "template",
+        "z": "f4668d01.5ec91",
+        "name": "Body",
+        "field": "payload.body",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "    <div width=\"100%\">\n        <table width=\"100%\">\n            <tr>\n                <td width=\"5%\" align=\"center\"><span class=\"tableHeading \">Tr</span></td>\n                <td width=\"30%\" align=\"center\"><span class=\"tableHeading \">Device</span></td>\n                <td width=\"30%\" align=\"center\"><span class=\"tableHeading \">Name</span></td>\n                <td width=\"30%\" align=\"center\"><span class=\"tableHeading \">Attr</span></td>\n            </tr>\n            <tr>\n                <td align=\"center\">\n                    <a id='csv0' href='' target='_blank' download=\"data0.csv\" class=\"csv-linked\">1</a>\n                </td>\n                <td>\n                    <select class=\"custom-select \" id=\"deviceSelect0\" onchange=\"deviceSelected(0)\">\n                        <option value='notSelected'></option>\n                    </select>\n                </td>\n                <td>\n                    <select class=\"custom-select \" id=\"nameSelect0\" onchange=\"nameSelected(0)\">\n                        <option value='notSelected'></option>\n                    </select>\n                </td>\n                <td>\n                    <select class=\"custom-select \" id=\"attrSelect0\" onchange=\"attrSelected(0)\">\n                        <option value='notSelected'></option>\n                    </select>\n                </td>\n            </tr>\n        </table>\n    </div>\n    <div id='plotSetup'>\n        <div class='row'>\n            <div class='col-md-12'>\n                <table id='plotSetupTable'>\n                    <tr>\n                        <td width=10% align=\"center\" class=\"tableHeading\">Max Plot Pts</td>\n                        <td width=20% align=\"center\" class=\"tableHeading\">Start</td>\n                        <td width=20% align=\"center\" class=\"tableHeading\">Stop</td>\n                        <td width=10% align=\"center\"></td>\n                    </tr>\n                    <tr>\n                        <td align=\"center\">\n                            <input class=\"form-control\" id=\"maxPtsToPlot\" type=\"text\" value=\"500\"/>\n                        </td>\n                        <td align=\"center\">\n                            <input class=\"form-control\" id=\"startDate\" type=\"text\"/>\n                        </td>\n                        <td align=\"center\">\n                            <input class=\"form-control\" id=\"stopDate\" type=\"text\"/>\n                        </td>\n                        <td align=\"center\">\n                            <button width=100% class=\"btn jumbotron-button\" id=\"getDataButton\" type=\"button\" onclick=\"getArchiveData()\">Get Data</button>\n                        </td>\n                    </tr>\n                </table>\n            </div>\n       </div>\n        <div class='row'>\n            <div class='col-md-12'>\n                <table id='plotTable'>\n                    <tr valign=\"top\">\n                        <td width='5%'>\n                            <table id='plotViewButtons'>\n                                <tr>\n                                    <td>\n                                        <button class=\"btn jumbotron-button btn-block\" id=\"birdsEyeButton\" type=\"button\" onclick=\"changePlotView(315,45)\">Birds Eye</button>\n                                    </td>\n                                </tr>\n                                <tr>\n                                    <td>\n                                        <button class=\"btn jumbotron-button btn-block\" id=\"overviewButton\" type=\"button\" onclick=\"changePlotView(0,90)\" >Overview</button>\n                                    </td>\n                                </tr>\n                                <tr>\n                                    <td>\n                                        <button class=\"btn jumbotron-button btn-block\" id=\"xviewButton\"    type=\"button\" onclick=\"changePlotView(0,0)\"  >X View</button>\n                                    </td>\n                                </tr>\n                            </table>\n                        </td>\n                        <td width='95%' >\n                            <div id=\"timePlot\" width=\"100%\" class=\"plot\"></div>\n                        </td>\n                    </tr>\n                </table>\n            </div>\n        </div>\n    </div>",
+        "output": "str",
+        "x": 570,
+        "y": 140,
+        "wires": [
+            [
+                "852cabe8.a65bc8"
+            ]
+        ]
+    },
+    {
+        "id": "4e3518a7.4723f8",
+        "type": "function",
+        "z": "f4668d01.5ec91",
+        "name": "getNameList",
+        "func": "var newMsg = \n{\n    topic           : 'getNameList',\n    userID          : msg.payload.userID,\n    payload         : [{deviceType:msg.payload.deviceType},{projection:{name:1, _id:0}}],\n    deviceType      : msg.payload.deviceType,\n    trace           : msg.payload.trace\n};\nreturn newMsg;\n",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 570,
+        "y": 300,
+        "wires": [
+            [
+                "c4fc958.357c268"
+            ]
+        ]
+    },
+    {
+        "id": "41b4e3a3.fb29cc",
+        "type": "function",
+        "z": "f4668d01.5ec91",
+        "name": "parse name list",
+        "func": "function objectLength( object ) {\n    var length = 0;\n    for( var key in object ) {\n        if( object.hasOwnProperty(key) ) {\n            ++length;\n        }\n    }\n    return length;\n}\nvar numNames = objectLength(msg.payload);\nvar nameList = [];\n\nfor (var iname = 0; iname < numNames; ++iname)\n{\n    nameList[iname] = msg.payload[iname].name;\n}\nreturn {\n    topic:'getNameList',\n    payload:{\n        topic           : 'getNameList',\n        nameList        : nameList,\n        userID          : msg.userID,\n        deviceType      : msg.deviceType,\n        trace           : msg.trace,\n    }\n};\n\n",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 1280,
+        "y": 280,
+        "wires": [
+            [
+                "95e8a8db.b56d58",
+                "728329d3.8f17b8"
+            ]
+        ]
+    },
+    {
+        "id": "d37cafdc.419ea",
+        "type": "subflow:f22a539a.a67b3",
+        "z": "f4668d01.5ec91",
+        "name": "",
+        "x": 700,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "852cabe8.a65bc8",
+        "type": "subflow:f22a539a.a67b3",
+        "z": "f4668d01.5ec91",
+        "name": "",
+        "x": 710,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "a816592f.674008",
+        "type": "http in",
+        "z": "90f83725.6dae08",
+        "name": "/core",
+        "url": "/core",
+        "method": "get",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 110,
+        "y": 60,
+        "wires": [
+            [
+                "12fc65f2.d77b1a"
+            ]
+        ]
+    },
+    {
+        "id": "ee138b7b.01cff8",
+        "type": "template",
+        "z": "90f83725.6dae08",
+        "name": "Body",
+        "field": "payload.body",
+        "fieldType": "msg",
+        "format": "html",
+        "syntax": "mustache",
+        "template": "    <div class='container' width=\"100%\">\n        <div class='row' style='padding-top:10px; padding-bottom:10px;'>\n            <div class='col-md-6' align='center'>\n                <a class=\"btn jumbotron-button btn-block\" width='80%' href=\"/scalarPlotter\" >Scalar Plotter</a> \n            </div>\n            <div class='col-md-6' align='center' >\n                <a class=\"btn jumbotron-button btn-block\" width='80%' href=\"/scalarArchivePlotter\" >Scalar Archive Plotter</a>\n            </div>\n        </div>\n        <div class='row' style='padding-top:10px; padding-bottom:10px;'>\n            <div class='col-md-6' align='center'>\n                <a class=\"btn jumbotron-button btn-block\" width='80%' href=\"/scalarViewer\" >Scalar Viewer</a> \n            </div>\n            <div class='col-md-6' align='center' >\n                <a class=\"btn jumbotron-button btn-block\" width='80%' href=\"/scalarAlarmScanner\" >Scalar Alarm Scanner</a> \n            </div>\n        </div>\n        <div class='row' style='padding-top:10px; padding-bottom:10px;'>\n            <div class='col-md-6' align='center'>\n                <a class=\"btn jumbotron-button btn-block\" width='80%' href=\"/vectorPlotter\" >Vector Plotter</a> \n            </div>\n            <div class='col-md-6' align='center' >\n                <a class=\"btn jumbotron-button btn-block\" width='80%' href=\"/vectorArchivePlotter\" >Vector Archive Plotter</a>\n            </div>\n        </div>\n        <div class='row' style='padding-top:10px; padding-bottom:10px;'>\n            <div class='col-md-6' align='center'>\n                <a class=\"btn jumbotron-button btn-block\" width='80%' href=\"/access-log\" >Access Log</a> \n            </div>\n            <div class='col-md-6' align='center' >\n                <a class=\"btn jumbotron-button btn-block\" width='80%' href=\"/settings-log\" >Settings Log</a>\n            </div>\n        </div>\n        <div class='row' style='padding-top:10px; padding-bottom:10px;'>\n            <div class='col-md-12' align='center' >\n                <a class=\"btn jumbotron-button btn-block\" width='80%' href=\"/\" >Custom App Index</a> \n            </div>\n        </div>\n    </div>",
+        "output": "str",
+        "x": 390,
+        "y": 60,
+        "wires": [
+            [
+                "53bb4dd3.eb2ef4"
+            ]
+        ]
+    },
+    {
+        "id": "53bb4dd3.eb2ef4",
+        "type": "template",
+        "z": "90f83725.6dae08",
+        "name": "Title",
+        "field": "payload.title",
+        "fieldType": "msg",
+        "format": "html",
+        "syntax": "mustache",
+        "template": "Utility Apps ",
+        "output": "str",
+        "x": 510,
+        "y": 60,
+        "wires": [
+            [
+                "9489acc4.62466"
+            ]
+        ]
+    },
+    {
+        "id": "12fc65f2.d77b1a",
+        "type": "template",
+        "z": "90f83725.6dae08",
+        "name": "JavaScript",
+        "field": "payload.javascript",
+        "fieldType": "msg",
+        "format": "javascript",
+        "syntax": "mustache",
+        "template": "        useWebSockets(false);\n        function onDocumentReady()\n        {\n        }\n        function onWebSocketOpen()\n        {\n        }\n        function onWebSocketClose()\n        {\n            \n        }\n        function onWebSocketMessage(msg)\n        {\n        }\n\n",
+        "output": "str",
+        "x": 250,
+        "y": 60,
+        "wires": [
+            [
+                "ee138b7b.01cff8"
+            ]
+        ]
+    },
+    {
+        "id": "9489acc4.62466",
+        "type": "subflow:f22a539a.a67b3",
+        "z": "90f83725.6dae08",
+        "name": "",
+        "x": 730,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "4b020c5e.179984",
+        "type": "subflow:f22a539a.a67b3",
+        "z": "a95862c5.7cda3",
+        "name": "",
+        "x": 750,
+        "y": 220,
+        "wires": []
     }
 ]
