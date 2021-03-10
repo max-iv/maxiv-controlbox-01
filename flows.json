@@ -874,15 +874,9 @@
         "x": 790,
         "y": 120,
         "wires": [
-            [
-                "29f3aee5.102672"
-            ],
-            [
-                "9d4bada0.71b3b"
-            ],
-            [
-                "48e2cd50.db32a4"
-            ]
+            [],
+            [],
+            []
         ]
     },
     {
@@ -2662,15 +2656,9 @@
         "x": 730,
         "y": 160,
         "wires": [
-            [
-                "72c58cab.a3c494"
-            ],
-            [
-                "72c58cab.a3c494"
-            ],
-            [
-                "72c58cab.a3c494"
-            ]
+            [],
+            [],
+            []
         ]
     },
     {
@@ -2699,7 +2687,7 @@
         "fieldType": "msg",
         "format": "html",
         "syntax": "mustache",
-        "template": "<!-- Body HTML -->\n    <div class='container' width=\"100%\">\n        <div class='row vert-pad' >\n            <div class='col-md-12' align='center' >\n                <a class=\"btn jumbotron-button btn-block big-text bold-text\" width='80%' href=\"/mode-0-damper?name=r3\" >\n                    <table width=\"100%\" alight=\"left\">\n                        <tr>\n                            <td width=\"30%\" align='center'> <img src=\"/img/balance.png\" height=\"70px\"/></td>\n                            <td width=\"70%\" align=\"left\">Mode 0 Damper</td>\n                        </tr>\n                    </table>\n                </a>\n            </div>\n        </div>\n        <div class='row vert-pad' >\n            <div class='col-md-12'>\n                <a class=\"btn jumbotron-button btn-block big-text bold-text\" width='80%' href=\"/oo-index\" >\n                    <table width=\"100%\" alight=\"left\">\n                        <tr>\n                            <td width=\"30%\" align='center'> <img src=\"/img/yellowSpaceShip.png\" height=\"70px\"/></td>\n                            <td width=\"70%\" align=\"left\">Oscillation Overthruster</td>\n                        </tr>\n                    </table>\n                </a>\n            </div>\n        </div>\n        <div class='row vert-pad' >\n            <div class='col-md-12' align='center' >\n                <a class=\"btn jumbotron-button btn-block big-text bold-text\" width='80%' href=\"/rfct?name=r3\" >\n                    <table width=\"100%\" alight=\"left\">\n                        <tr>\n                            <td width=\"30%\" align='center'> <img src=\"/img/yellowTransform.png\" height=\"70px\"/></td>\n                            <td width=\"70%\" align=\"left\">RFCT</td>\n                        </tr>\n                    </table>\n                </a>\n            </div>\n        </div>\n        <div class='row vert-pad' >\n            <div class='col-md-12' align='center' >\n                <a class=\"btn jumbotron-button btn-block big-text bold-text\" width='80%' href=\"/rfill?name=r3\" >\n                    <table width=\"100%\" alight=\"left\">\n                        <tr>\n                            <td width=\"30%\" align='center'> <img src=\"/img/bucketYellow.png\" height=\"70px\"/></td>\n                            <td width=\"70%\" align=\"left\">R3 Fill Pattern</td>\n                        </tr>\n                    </table>\n                </a>\n            </div>\n        </div>\n        <div class='row vert-pad' >\n            <div class='col-md-12' align='center' >\n                <a class=\"btn jumbotron-button btn-block big-text bold-text\" width='80%' href=\"/core\" >\n                    <table width=\"100%\" alight=\"left\">\n                        <tr>\n                            <td width=\"30%\" align='center'> <img src=\"/img/coreYellow.png\" height=\"70px\"/></td>\n                            <td width=\"70%\" align=\"left\">Core Apps</td>\n                        </tr>\n                    </table>\n                </a> \n            </div>\n        </div>\n    </div>",
+        "template": "<!-- Body HTML -->\n    <div class='container' width=\"100%\">\n        <div class='row vert-pad' >\n            <div class='col-md-12' align='center' >\n                <a class=\"btn jumbotron-button btn-block big-text bold-text\" width='80%' href=\"/mode-0-damper?name=r3\" >\n                    <table width=\"100%\" alight=\"left\">\n                        <tr>\n                            <td width=\"30%\" align='center'> <img src=\"/img/balance.png\" height=\"70px\"/></td>\n                            <td width=\"70%\" align=\"left\">Mode 0 Damper</td>\n                        </tr>\n                    </table>\n                </a>\n            </div>\n        </div>\n    </div>",
         "output": "str",
         "x": 770,
         "y": 40,
@@ -2825,9 +2813,7 @@
         "x": 90,
         "y": 80,
         "wires": [
-            [
-                "ed931990.cffcd8"
-            ]
+            []
         ]
     },
     {
@@ -3013,9 +2999,7 @@
         "x": 100,
         "y": 420,
         "wires": [
-            [
-                "60bbe7d6.2f6f38"
-            ]
+            []
         ]
     },
     {
@@ -3030,9 +3014,7 @@
         "x": 100,
         "y": 480,
         "wires": [
-            [
-                "8a3ea40e.a1fad8"
-            ]
+            []
         ]
     },
     {
@@ -3312,9 +3294,7 @@
         "x": 100,
         "y": 360,
         "wires": [
-            [
-                "854e930e.a07b7"
-            ]
+            []
         ]
     },
     {
@@ -4180,9 +4160,7 @@
         "x": 90,
         "y": 880,
         "wires": [
-            [
-                "43d83811.56e618"
-            ]
+            []
         ]
     },
     {
@@ -6050,5 +6028,22 @@
         "x": 750,
         "y": 220,
         "wires": []
+    },
+    {
+        "id": "ad8132db.c0dce",
+        "type": "template",
+        "z": "a858ad3a.95706",
+        "name": "Body Old",
+        "field": "payload.body",
+        "fieldType": "msg",
+        "format": "html",
+        "syntax": "mustache",
+        "template": "<!-- Body HTML -->\n    <div class='container' width=\"100%\">\n        <div class='row vert-pad' >\n            <div class='col-md-12' align='center' >\n                <a class=\"btn jumbotron-button btn-block big-text bold-text\" width='80%' href=\"/mode-0-damper?name=r3\" >\n                    <table width=\"100%\" alight=\"left\">\n                        <tr>\n                            <td width=\"30%\" align='center'> <img src=\"/img/balance.png\" height=\"70px\"/></td>\n                            <td width=\"70%\" align=\"left\">Mode 0 Damper</td>\n                        </tr>\n                    </table>\n                </a>\n            </div>\n        </div>\n        <div class='row vert-pad' >\n            <div class='col-md-12'>\n                <a class=\"btn jumbotron-button btn-block big-text bold-text\" width='80%' href=\"/oo-index\" >\n                    <table width=\"100%\" alight=\"left\">\n                        <tr>\n                            <td width=\"30%\" align='center'> <img src=\"/img/yellowSpaceShip.png\" height=\"70px\"/></td>\n                            <td width=\"70%\" align=\"left\">Oscillation Overthruster</td>\n                        </tr>\n                    </table>\n                </a>\n            </div>\n        </div>\n        <div class='row vert-pad' >\n            <div class='col-md-12' align='center' >\n                <a class=\"btn jumbotron-button btn-block big-text bold-text\" width='80%' href=\"/rfct?name=r3\" >\n                    <table width=\"100%\" alight=\"left\">\n                        <tr>\n                            <td width=\"30%\" align='center'> <img src=\"/img/yellowTransform.png\" height=\"70px\"/></td>\n                            <td width=\"70%\" align=\"left\">RFCT</td>\n                        </tr>\n                    </table>\n                </a>\n            </div>\n        </div>\n        <div class='row vert-pad' >\n            <div class='col-md-12' align='center' >\n                <a class=\"btn jumbotron-button btn-block big-text bold-text\" width='80%' href=\"/rfill?name=r3\" >\n                    <table width=\"100%\" alight=\"left\">\n                        <tr>\n                            <td width=\"30%\" align='center'> <img src=\"/img/bucketYellow.png\" height=\"70px\"/></td>\n                            <td width=\"70%\" align=\"left\">R3 Fill Pattern</td>\n                        </tr>\n                    </table>\n                </a>\n            </div>\n        </div>\n        <div class='row vert-pad' >\n            <div class='col-md-12' align='center' >\n                <a class=\"btn jumbotron-button btn-block big-text bold-text\" width='80%' href=\"/core\" >\n                    <table width=\"100%\" alight=\"left\">\n                        <tr>\n                            <td width=\"30%\" align='center'> <img src=\"/img/coreYellow.png\" height=\"70px\"/></td>\n                            <td width=\"70%\" align=\"left\">Core Apps</td>\n                        </tr>\n                    </table>\n                </a> \n            </div>\n        </div>\n    </div>",
+        "output": "str",
+        "x": 780,
+        "y": 120,
+        "wires": [
+            []
+        ]
     }
 ]
